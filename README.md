@@ -1,6 +1,6 @@
 Django/Angular Token Auth with Django Rest Framework
 ====================================
-This is an update version of [zackargyle](https://github.com/zackargyle)'s [angularjs-django-rest-framework-seed](https://github.com/zackargyle/angularjs-django-rest-framework-seed)which is amazing. There were just a few tweaks that I needed to make in order to make the project work properly. Updates need to be made to the steps below in order for things to run smoother.
+This is an update version of [zackargyle](https://github.com/zackargyle)'s [angularjs-django-rest-framework-seed](https://github.com/zackargyle/angularjs-django-rest-framework-seed) which is amazing. There were just a few tweaks that I needed to make in order to make the project work properly. Updates need to be made to the steps below in order for things to run smoother.
 
 ** NEW FEATURE **
 ```
