@@ -19,13 +19,23 @@ function addResourceFactoryToService (service, resourceName, resourceEndpoint) {
           return $resource(
           	constants.serverAddress + resourceEndpoint + '/:id',
             // Creates a PUT method defined as 'update'
-          	{	id: '@id', },
+          	{	id: '@id' },
     				{
             	update: {
           			method: 'PUT',
           			params: {id: '@id'}
-          		},
+          		}
         	 }
         );
   });
 }
+
+service.factory('Auth', function($rootScope, $cookieStore, $window){
+    return {
+        "logout": function(){
+            $cookieStore.remove('djangotoken');
+            $window.location.reload(); // Reload the page for the change to take effect
+            $rootScope.$broadcast('loggedOut');
+        }
+    }
+});

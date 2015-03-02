@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 from rest_framework.urlpatterns import format_suffix_patterns
-from app import views
+import views
 
 urlpatterns = patterns('app.views', url(r'^addresses$', views.AddressList.as_view(), name='address-list'),
                        url(r'^addresses/(?P<pk>[0-9]+)$', views.AddressDetail.as_view(), name='address-detail'),

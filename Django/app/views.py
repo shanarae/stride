@@ -1,6 +1,5 @@
-from app.models import *
-from app.serializers import *
-
+from models import Address
+from serializers import UserSerializer, AddressSerializer
 from rest_framework import generics
 from rest_framework import permissions
 
@@ -9,6 +8,9 @@ from django.contrib.auth.models import User
 
 class UserList(generics.ListCreateAPIView):
     """List all users or create a new User"""
+    def get_queryset(self):
+        return User.objects.all()
+
     permission_classes = (permissions.IsAuthenticated,)
     model = User
     serializer_class = UserSerializer
@@ -16,6 +18,9 @@ class UserList(generics.ListCreateAPIView):
 
 class UserDetail(generics.RetrieveAPIView):
     """Retrieve, update or delete a User instance."""
+    def get_queryset(self):
+        return User.objects.filter(username=self.request.user.username)
+
     permission_classes = (permissions.IsAuthenticated,)
     model = User
     serializer_class = UserSerializer
@@ -23,6 +28,12 @@ class UserDetail(generics.RetrieveAPIView):
 
 class AddressList(generics.ListCreateAPIView):
     """List all addresses or create a new Address"""
+    def get_queryset(self):
+        user = User.objects.filter(username=self.request.user.username)
+        return Address.objects.filter(user=user)
+
+
+    queryset = Address.objects.all()
     permission_classes = (permissions.IsAuthenticated,)
     model = Address
     serializer_class = AddressSerializer

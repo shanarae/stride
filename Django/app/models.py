@@ -1,5 +1,6 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
+
 from rest_framework.authtoken.models import Token
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -18,6 +19,7 @@ class Address(models.Model):
     city = models.CharField(max_length=200)
     state = models.CharField(max_length=200)
     country = models.CharField(max_length=200)
+    user = models.ForeignKey(User, related_name='users', null=True)
 
     def __unicode__(self):
         return u'%s, %s, %s' % (self.street, self.city, self.state)

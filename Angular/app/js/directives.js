@@ -19,7 +19,7 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
 	        		main.style.display = "none";
 	        		login.style.display = "block";
 	        	}
-    		  }
+    		  };
 
           scope.$on('event:auth-loginRequired', function () {
             applyLogin(false)
@@ -35,21 +35,14 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
  	.directive('login', function($http, $cookieStore, authService) {
  		return {
  			restrict: 'A',
- 			template: " <form> " +
-     					    "<label>Username</label>" +
-      						"<input type='text' ng-model='username'>" +
-      						"<label>Password</label>" +
-      						"<input type='password' ng-model='password'>" +
-      						"<br>" +
-      						"<input type='submit'>" +
-    					"</form>",
+ 			templateUrl: 'js/login.html',
  			link: function(scope, elem, attrs) {
 
  				elem.bind('submit', function() {
 
 					var user_data = {
 		                "username": scope.username,
-		                "password": scope.password,
+		                "password": scope.password
 		            };
 					
 					//$http.post(constants.serverAddress + "api-token-auth", user_data)
