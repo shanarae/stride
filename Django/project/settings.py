@@ -116,3 +116,11 @@ try:
     INSTALLED_APPS += DEBUG_APPS
 except ImportError:
     pass
+
+#override with your own settings
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'email_host'
+EMAIL_HOST_USER = 'email_host_user'
+EMAIL_HOST_PASSWORD = 'email_host_password'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = 'default_from_email'

@@ -57,3 +57,9 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:8000',
     'localhost/',
 )
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'shanarae@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = 'shanarae@gmail.com'
