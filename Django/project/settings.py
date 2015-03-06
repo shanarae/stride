@@ -77,6 +77,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.admin',
     'app',
+    'racekeeper',
     'rest_framework.authtoken',
     'rest_framework',
     'corsheaders',

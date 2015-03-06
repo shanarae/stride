@@ -13,11 +13,13 @@
 <body auth-application>
 
 <script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular-route.js"></script>
 
-  <!-- Login Form -->
-  <div id="login-holder">
-    <div login></div>
-  </div>
+
+  <!--&lt;!&ndash; Login Form &ndash;&gt;-->
+  <!--<div id="login-holder">-->
+    <!--<div login></div>-->
+  <!--</div>-->
 
     <!-- Add your site or application content here -->
     <div class="header">
@@ -35,11 +37,17 @@
             <a class="navbar-brand" href="#/">stride</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="loginCtrl">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/racekeeper">Race Tracker</a></li>
+              <li ng-class="{active: isActive('#/')}"><a href="#/">Home</a></li>
+              <li ng-class="{active: isActive('#/racekeeper')}"><a ng-href="#/racekeeper">Race Tracker</a></li>
+              <li ng-class="{active: isActive('#/racefinder')}"><a ng-href="#/racefinder">Event Finder</a></li>
+              <li ng-class="{active: isActive('#/raceplan')}"><a ng-href="#/raceplan">Training Plan</a></li>
+              <li ng-class="{active: isActive('#/profile')}"><a ng-href="#/profile">Profile</a></li>
+              <li ng-class="{active: isActive('#/register')}"><a ng-href="#/register">Register</a></li>
+              <!--<li ng-class="{active: isActive('#/login')}"><a ng-href="#/login">Login</a></li>-->
+              <li>Hello {{username}}</li>
             </ul>
           </div>
         </div>
@@ -49,28 +57,29 @@
 
   <div id="main">
   <div class="container body-content">
-    <div ng-view=""></div>
+      <div ng-view=""></div>
   </div>
 <hr>
   <div class="footer">
   <div class="container">
-    <p><span class="glyphicon glyphicon-heart"></span> Created with love by No Excuses Productions</p>
+    <p>Made with <span class="glyphicon glyphicon-heart"></span> by No Excuses Productions. &copy; 2015</p>
   </div>
 </div>
 </div>
 
 <!-- Latest compiled and minified JavaScript -->
+  <script src="lib/jquery-1.11.2.js"></script>
   <script src="lib/bootstrap-3.3.2/dist/js/bootstrap.js"></script>
   <script src="js/constants.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
+  <script src="js/racekeepercontroller.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
   <script src="js/ui-bootstrap-tpls-0.3.0.js"></script>
   <script src="lib/http-auth-interceptor.js"></script>
   <script src="lib/angular/angular-resource.js"></script>
   <script src="lib/angular/angular-cookies.js"></script>
-
 </body>
 </html>

@@ -3,21 +3,31 @@
 /* Directives */
 
 angular.module('angularProject.directives', ['http-auth-interceptor'])
-	.directive('authApplication', function($cookieStore, $http, $rootScope) {
+	.directive('authApplication', function($cookieStore, $http, $rootScope, $location) {
  		return {
  			restrict: 'A',
     		link: function (scope, elem, attrs) {
 
-    		  var main = document.getElementById("main");
-    		  var login = document.getElementById("login-holder");
+    		  //var main = document.getElementById("main");
+    		  var protectedElements = document.querySelector(".protected") || [];
+    		  //var login = document.getElementById("login-holder");
 
     		  var applyLogin = function(good) {
     		  	if (good) {
-	    		  	main.style.display = "block";
-	        		login.style.display = "none";
+                    scope.loggedIn = true;
+                    //for (var i=0; i < protectedElements.length; i++) {
+                    //    protectedElements[i].style.display = "block";
+                    //}
+	    		  	//main.style.display = "block";
+	        		//login.style.display = "none";
 	        	} else {
-	        		main.style.display = "none";
-	        		login.style.display = "block";
+                    scope.loggedIn = false;
+
+                    //for (var j=0; j < protectedElements.length; j++) {
+                    //    protectedElements[j].style.display = "none";
+                    //}
+	        		//main.style.display = "none";
+	        		//login.style.display = "block";
 	        	}
     		  };
 
@@ -32,7 +42,7 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
     		}
  		}
  	})
- 	.directive('login', function($http, $cookieStore, authService) {
+ 	.directive('login', function($http, $cookieStore, authService, $location) {
  		return {
  			restrict: 'A',
  			templateUrl: 'js/login.html',
@@ -51,6 +61,7 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
 		                	$cookieStore.put('djangotoken', response.token);
 		                    $http.defaults.headers.common['Authorization'] = 'Token ' + response.token;
 		                    authService.loginConfirmed();
+                            $location.path('/racekeeper');
 		            }); 
 
  				});

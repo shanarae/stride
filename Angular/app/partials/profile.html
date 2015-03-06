@@ -1,0 +1,12 @@
+<button class="btn pull-right btn" ng-if="loggedIn != true"><a ng-href="#/login">Login</a></button>
+<div ng-if="loggedIn == true">
+<button class="btn pull-right btn" ng-click="logout()">Logout</button>
+<div class="page-header">
+    <h1>Athlete Profile</h1>
+</div>
+
+<p>Username: {{username}}</p>
+<p>Name: {{first_name}} {{last_name}}</p>
+<p>Email address: {{email}}</p>
+<p>Last login: {{last_login}}</p>
+</div>

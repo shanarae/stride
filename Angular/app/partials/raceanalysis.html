@@ -1,0 +1,15 @@
+<button class="btn pull-right btn" ng-click="logout()">Logout</button>
+<div class="btn-group">
+    <label class="btn btn" ng-model="radioModel" btn-radio="racekeeper"><a ng-href="#/racekeeper">Past Races</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="addrace"><a ng-href="#/racekeeper/addrace">Add a Race</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="raceanalysis"><a ng-href="#/racekeeper/raceanalysis">Race Analysis</a></label>
+</div>
+
+<div class="page-header">
+    <h1>Performance Analysis</h1>
+</div>
+
+<p class="lead"><strong>{{ getTotalRaces() }}</strong> Races on Record</p>
+
+<div class="well">
+</div>

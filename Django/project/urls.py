@@ -4,4 +4,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('backend.views',
                        url(r'^admin/', include(admin.site.urls)),
-                       url(r'^', include('app.urls')))
+                       url(r'^', include('app.urls')),
+                       url(r'^races/', include ('racekeeper.urls')),
+)

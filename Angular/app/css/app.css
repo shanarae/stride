@@ -1,11 +1,12 @@
-#login-holder {
-	display: none;
-}
+/*#login-holder {*/
+	/*display: none;*/
+/*}*/
 
-#main {
+.protected {
 	display: none;
 }
 
 .other-color {
-    background: #979bc2;
+    background: #5cc9f9;
 }
+
