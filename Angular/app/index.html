@@ -8,18 +8,16 @@
   <link rel="stylesheet" href="lib/bootstrap-3.3.2/dist/css/bootstrap.css"/>
   <link rel="stylesheet" href="lib/bootstrap-3.3.2/dist/css/bootstrap-theme.css"/>
   <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="lib/c3-0.4.9/c3.css"/>
 </head>
 
 <body auth-application>
 
 <script src="lib/angular/angular.js"></script>
 <script src="lib/angular/angular-route.js"></script>
-
-
-  <!--&lt;!&ndash; Login Form &ndash;&gt;-->
-  <!--<div id="login-holder">-->
-    <!--<div login></div>-->
-  <!--</div>-->
+<script src="lib/d3/d3.min.js" charset="utf-8"></script>
+<script src="lib/c3-0.4.9/c3.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDMURA_ZmIfWvIEDORVbUEjyQJtKrCXIQ"></script>
 
     <!-- Add your site or application content here -->
     <div class="header">
@@ -37,23 +35,21 @@
             <a class="navbar-brand" href="#/">stride</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="loginCtrl">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="homeCtrl">
 
             <ul class="nav navbar-nav">
               <li ng-class="{active: isActive('#/')}"><a href="#/">Home</a></li>
               <li ng-class="{active: isActive('#/racekeeper')}"><a ng-href="#/racekeeper">Race Tracker</a></li>
-              <li ng-class="{active: isActive('#/racefinder')}"><a ng-href="#/racefinder">Event Finder</a></li>
-              <li ng-class="{active: isActive('#/raceplan')}"><a ng-href="#/raceplan">Training Plan</a></li>
+              <li ng-class="{active: isActive('#/racefinder')}"><a ng-href="#/racefinder">Event Mapper</a></li>
+              <li ng-class="{active: isActive('#/raceplan')}"><a ng-href="#/raceplan">Training Planner</a></li>
               <li ng-class="{active: isActive('#/profile')}"><a ng-href="#/profile">Profile</a></li>
               <li ng-class="{active: isActive('#/register')}"><a ng-href="#/register">Register</a></li>
-              <!--<li ng-class="{active: isActive('#/login')}"><a ng-href="#/login">Login</a></li>-->
-              <li>Hello {{username}}</li>
+              <li ng-if="loggedIn == true">Welcome back! {{logname}}</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-
 
   <div id="main">
   <div class="container body-content">
@@ -75,6 +71,9 @@
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/racekeepercontroller.js"></script>
+  <script src="js/racedetailcontroller.js"></script>
+  <script src="js/raceplannercontroller.js"></script>
+  <script src="js/raceplandetailcontroller.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
   <script src="js/ui-bootstrap-tpls-0.3.0.js"></script>

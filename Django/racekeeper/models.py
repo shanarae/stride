@@ -15,13 +15,13 @@ class Race(models.Model):
         (26.2, 'Marathon'),
         (31.069, '50K'),
         (62.137, '100K'),
-        (100, '100 Miles'),
+        (100.0, '100 Miles'),
     )
 
     event = models.CharField(max_length=100)
     date = models.DateField()
     distance = models.FloatField(choices=DISTANCES)
-    bibNumber = models.IntegerField()
+    bibNumber = models.IntegerField(null=True, blank=True)
     finishTime = models.IntegerField()
     totalinRace = models.IntegerField(null=True, blank=True)
     overallPlace = models.IntegerField(null=True, blank=True)
@@ -30,6 +30,7 @@ class Race(models.Model):
     totalinDivision = models.IntegerField(null=True, blank=True)
     divisionPlace = models.IntegerField(null=True, blank=True)
     user = models.ForeignKey(User)
+    location = models.CharField(max_length=100, null=True, blank=True)
 
     @property
     def pace(self):
@@ -46,6 +47,13 @@ class Race(models.Model):
     @property
     def divisionPercentile(self):
         return float("{0:.3f}".format(float(self.divisionPlace) / self.totalinDivision)) if self.divisionPlace is not None else None
+
+    @property
+    def distanceLabel(self):
+        for test in self.DISTANCES:
+            if test[0] == self.distance:
+                return test[1]
+        return ""
 
     def __str__(self):
         return "%s on %s" % (self.event, self.date)

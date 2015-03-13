@@ -4,9 +4,11 @@
 <div class="page-header">
     <h1>Athlete Profile</h1>
 </div>
-
-<p>Username: {{username}}</p>
-<p>Name: {{first_name}} {{last_name}}</p>
-<p>Email address: {{email}}</p>
-<p>Last login: {{last_login}}</p>
+<div class="well">
+<p>Username: {{user.username}}</p>
+<p>Name: {{user.first_name}} {{user.last_name}}</p>
+<p>Email address: {{user.email}}</p>
+<p>Date joined: {{user.date_joined}}</p>
+<p>Last login: {{user.last_login}}</p>
+</div>
 </div>

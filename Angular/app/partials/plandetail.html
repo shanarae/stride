@@ -1,0 +1,43 @@
+<button class="btn pull-right btn" ng-if="loggedIn != true"><a ng-href="#/login">Login</a></button>
+<div ng-if="loggedIn == true">
+<button class="btn pull-right btn" ng-click="logout()">Logout</button>
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#/raceplan">Existing Plans</a></li>
+  <li role="presentation"><a href="#/raceplan/myplans">Create New Plan</a></li>
+</ul>
+
+<div class="page-header">
+    <h1>{{race.event}}</h1>
+</div>
+
+<p class="lead"><strong>My upcoming race:</strong></p>
+<p>{{ race.event }} on {{ race.date | date:'MMM d, yyyy' }} in {{race.location}} | Distance: {{ race.distance | number:1 }}</p>
+<p>Goal finish time: {{ race.finishTime * 1000 | date:'H:mm:ss':'UTC' }} | Goal pace: {{ race.pace | pace }}</p>
+
+<hr>
+
+<p class="lead"><strong>Training Plan</strong></p>
+    <div class="panel panel-default">
+    <table class="table">
+        <!--<thead>-->
+        <!--<tr>-->
+            <!--<th ng-click="sortBy='event';reverse=!reverse">Event</th>-->
+            <!--<th ng-click="sortBy='date';reverse=!reverse">Date</th>-->
+            <!--<th ng-click="sortBy='finishTime';reverse=!reverse">Finish Time</th>-->
+            <!--<th ng-click="sortBy='pace';reverse=!reverse">Pace</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+
+        <tbody ng-repeat="week in plan.weeks" class="">
+            <tr>
+                <td>{{ week.weekStartDate }}</td>
+                <td ng-repeat="day in week.days">{{day.workout.type}}| {{day.workout.description}} | {{day.workout.pace}}</td>
+                <!--<td>{{ five.date | date:'MMM d, yyyy' }}</td>-->
+                <!--<td>{{ five.finishTime * 1000 | date:'H:mm:ss':'UTC' }}</td>-->
+                <!--<td>{{ five.pace | pace }}</td>-->
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stride!</title>
+        {% load staticfiles %}
+
+  <link rel="stylesheet" href="angular/app/lib/bootstrap-3.3.2/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="angular/app/lib/bootstrap-3.3.2/dist/css/bootstrap-theme.css"/>
+  <link rel="stylesheet" href="angular/app/css/app.css"/>
+</head>
+
+<body>
+
+    <div class="header">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/">stride</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="loginCtrl">
+
+            <ul class="nav navbar-nav">
+              <li ng-class="{active: isActive('#/')}"><a href="#/">Home</a></li>
+              <li ng-class="{active: isActive('#/racekeeper')}"><a ng-href="#/racekeeper">Race Tracker</a></li>
+              <li ng-class="{active: isActive('#/racefinder')}"><a ng-href="#/racefinder">Event Finder</a></li>
+              <li ng-class="{active: isActive('#/raceplan')}"><a ng-href="#/raceplan">Training Plan</a></li>
+              <li ng-class="{active: isActive('#/profile')}"><a ng-href="#/profile">Profile</a></li>
+              <li ng-class="{active: isActive('#/register')}"><a ng-href="#/register">Register</a></li>
+              <!--<li ng-class="{active: isActive('#/login')}"><a ng-href="#/login">Login</a></li>-->
+              <li>Hello {{username}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <div id="main">
+  <div class="container body-content">
+{% block content %}{% endblock %}
+  </div>
+<hr>
+  <div class="footer">
+  <div class="container">
+    <p>Made with <span class="glyphicon glyphicon-heart"></span> by No Excuses Productions. &copy; 2015</p>
+  </div>
+</div>
+</div>
+
+<!-- Latest compiled and minified JavaScript -->
+  <script src="angular/app/lib/jquery-1.11.2.js"></script>
+  <script src="angular/app/lib/bootstrap-3.3.2/dist/js/bootstrap.js"></script>
+  <script src="angular/app/js/constants.js"></script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

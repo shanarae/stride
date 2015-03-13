@@ -1,18 +1,18 @@
 <button class="btn pull-right btn" ng-if="loggedIn != true"><a ng-href="#/login">Login</a></button>
 <div ng-if="loggedIn == true">
-    <button class="btn pull-right btn" ng-click="logout()">Logout</button>
+<button class="btn pull-right btn" ng-click="logout()">Logout</button>
 
-    <div class="btn-group">
-        <label class="btn btn" ng-model="radioModel" btn-radio="racekeeper"><a ng-href="#/racekeeper">Past Races</a></label>
-        <label class="btn btn" ng-model="radioModel" btn-radio="addrace"><a ng-href="#/racekeeper/addrace">Add a Race</a></label>
-        <label class="btn btn" ng-model="radioModel" btn-radio="raceanalysis"><a ng-href="#/racekeeper/raceanalysis">Race Analysis</a></label>
-    </div>
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#/racekeeper">Past Races</a></li>
+  <li role="presentation"><a href="#/racekeeper/raceanalysis">Race Analysis</a></li>
+  <li role="presentation"><a href="#/racekeeper/addrace">Add a Race</a></li>
+</ul>
 
     <div class="page-header">
         <h1>Race Tracker</h1>
     </div>
 
-    <p class="lead"><strong>{{ getTotalRaces() }}</strong> Races on Record</p>
+    <p class="lead">Total Races: <strong>{{ getTotalRaces() }}</strong></p>
 
     <p>Filter by Distance: <input type="text" ng-model="raceFilter.distance"></p>
 
@@ -23,7 +23,7 @@
         <tr>
             <th ng-click="sortBy='event';reverse=!reverse">Event</th>
             <th ng-click="sortBy='date';reverse=!reverse">Date</th>
-            <th ng-click="sortBy='distance';reverse=!reverse">Distance</th>
+            <th ng-click="sortBy='distance';reverse=!reverse">Distance (miles)</th>
             <th ng-click="sortBy='finishTime';reverse=!reverse">Finish Time</th>
             <th ng-click="sortBy='pace';reverse=!reverse">Pace</th>
             <th ng-click="sortBy='totalinRace';reverse=!reverse">Total in Race</th>
@@ -42,7 +42,7 @@
 
         <tbody ng-repeat="race in races | filter: raceFilter | orderBy: sortBy:reverse" class="race">
             <tr>
-                <td>{{ race.event }}</td>
+                <td>{{ race.event }}</a></td>
                 <td>{{ race.date | date:'MMM d, yyyy' }}</td>
                 <td>{{ race.distance | number:1 }}</td>
                 <td>{{ race.finishTime * 1000 | date:'H:mm:ss':'UTC' }}</td>
@@ -57,6 +57,7 @@
                 <td>{{ race.divisionPlace | number }}</td>
                 <td>{{ race.divisionPercentile * 100 | number:1 }}</td>
                 <td>{{ race.bibNumber }}</td>
+                <td bn-index-watch><a ng-href="#/racekeeper/{{race.id}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
                 <td bn-index-watch><a ng-click="removeRace(race)"><span class='glyphicon glyphicon-trash'></span></a></td>
             </tr>
         </tbody>

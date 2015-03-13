@@ -1,0 +1,52 @@
+<button class="btn pull-right btn" ng-click="logout()">Logout</button>
+
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="#/raceplan">Existing Plans</a></li>
+  <li role="presentation" class="active"><a href="#/raceplan/myplans">Create New Plan</a></li>
+</ul>
+
+<div class="page-header">
+    <h1>Create a New Training Plan</h1>
+</div>
+
+    <p class="lead">Let's start planning your next event!</p>
+    <p>This will create a day-by-day training plan aimed to get you to ready to run at your race goal time. This is a proof-of-concept project. The training is based on the FIRST program.</p>
+<div class="well" id="raceplan">
+    <form class="form-group" name="newplanForm">
+    <p><strong>Enter the details about your upcoming race and goals.</strong></p>
+    <div class="control-group">
+        <label>Event name:  </label>
+        <input type="text" ng-model="formPlanEvent" required>
+    </div>
+    <br>
+    <div class="control-group">
+        <label>Date:  </label>
+        <input type="date" ng-model="formPlanDate" required>
+    </div>
+    <br>
+    <div class="control-group">
+        <label>Distance:  </label><select ng-model="formPlanDistance" required>
+        <option style="display:none" value class>select a distance</option>
+        <option value="3.107">5K</option>
+        <option value="6.214">10K</option>
+        <option value="13.1">Half Marathon</option>
+        <option value="26.2">Marathon</option>
+        <option value="31.069">50K</option>
+        <option value="62.137">100K</option>
+        <option value="100.0">100 Miles</option></select>
+    </div>
+    <br>
+    <div class="control-group">
+        <label>Finish time goal (enter as HH:MM:SS):  </label>
+        <input type="text" ng-model="formPlanFinishTime" required>
+    </div>
+    <br>
+    <div class="control-group">
+        <label>Location:  </label>
+        <input type="text" ng-model="formPlanLocation">
+    </div>
+    <br>
+    <button class="btn btn-primary" ng-click="createPlan()"><strong>Create a Plan</strong></button>
+    <a href="#/raceplan" class="btn">Cancel</a>
+</form>
+</div>

@@ -2,5 +2,18 @@
 <div ng-if="loggedIn == true">
 <button class="btn pull-right btn" ng-click="logout()">Logout</button>
 
-<p>So you've signed up for an event? It's time to create a training plan/</p>
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#/raceplan">Existing Plans</a></li>
+  <li role="presentation"><a href="#/raceplan/myplans">Create New Plan</a></li>
+</ul>
+
+ <div class="page-header">
+        <h1>Training Planner</h1>
+  </div>
+<p class="lead">Training plans for your upcoming events:</p>
+
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="race in races | orderBy:'date'"><a href="#/raceplan/myplans/{{race.id}}">{{race.event}} | {{ race.date | date:'MMM d, yyyy' }}</a></li>
+</ul>
+
 </div>

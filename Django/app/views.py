@@ -1,5 +1,5 @@
 from models import Address
-from serializers import UserSerializer, AddressSerializer
+from serializers import UserSerializer, AddressSerializer, CreateUserSerializer
 from rest_framework import generics
 from rest_framework import permissions
 
@@ -44,3 +44,7 @@ class AddressDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.IsAuthenticated,)
     model = Address
     serializer_class = AddressSerializer
+
+
+class RegisterUser(generics.CreateAPIView):
+    serializer_class = CreateUserSerializer

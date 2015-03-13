@@ -2,6 +2,7 @@
 #contrib/admin/templates/admin
 from django.contrib import admin
 from app.models import *
+from racekeeper.models import *
 
 
 class AddressAdmin(admin.ModelAdmin):

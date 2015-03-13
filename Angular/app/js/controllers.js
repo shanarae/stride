@@ -15,30 +15,42 @@ var controllersModule = angular.module('angularProject.controllers', [])
 
 })
 
-    .controller('registerCtrl', function($scope, Auth, $http, $cookies, User, $location) {
+    .controller('registerCtrl', function($scope, Auth, $http, $cookies, $location, $cookieStore, authService, $rootScope) {
     $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
     $http.defaults.headers.put['X-CSRFToken'] = $cookies['csrftoken'];
     $http.defaults.xsrfCookieName = 'csrftoken';
     $http.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-    $scope.registration = function(){
+    $scope.register = function(){
     var data = {
         'username': $scope.formUsername,
         'first_name': $scope.formFirstName,
         'last_name': $scope.formLastName,
         'email': $scope.formEmail,
-        'password1': $scope.formPassword1,
-        'password2': $scope.formPassword2
+        'password': $scope.formPassword1
     };
-        $http.post('http://localhost:8001/users', data).
+        $http.post('http://localhost:8001/register', data).
         success(function(data){
-                $scope.users.push({username:data.username, first_name:data.first_name, last_name:data.last_name, email:data.email, password1:data.password1, password2:data.password2});
+                var user_data = {
+		                "username": $scope.formUsername,
+		                "password": $scope.formPassword1
+		            };
                 $scope.formUsername = '';
                 $scope.formFirstName = '';
                 $scope.formLastName = '';
                 $scope.formEmail = '';
                 $scope.formPassword1 = '';
                 $scope.formPassword2 = '';
+
+                //$http.post(constants.serverAddress + "api-token-auth", user_data)
+                $http.post("http://localhost:8001/api-token-auth/", user_data)
+                    .success(function(response) {
+                        $cookieStore.put('djangotoken', response.token);
+                        $http.defaults.headers.common['Authorization'] = 'Token ' + response.token;
+                        authService.loginConfirmed();
+                        alert("Thank you for registering!");
+                        $location.path('/racekeeper');
+                });
             }).
 
         error(function(data){
@@ -53,27 +65,73 @@ var controllersModule = angular.module('angularProject.controllers', [])
       }
 })
 
-    .controller('profileCtrl', function($scope, Auth, User, $location) {
+    .controller('profileCtrl', function($scope, Auth, $http, $cookies, $location) {
+    $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
+    $http.defaults.headers.put['X-CSRFToken'] = $cookies['csrftoken'];
+    $http.defaults.xsrfCookieName = 'csrftoken';
+    $http.defaults.xsrfHeaderName = 'X-CSRFToken';
+
+
+      $scope.getUser = function() {
+          $http.get('http://localhost:8001/users/' + user.id + '/');
+
+          success(function(data) {
+              $scope.user=data;
+              return $scope.user;
+              $scope.username = user.username;
+              $scope.first_name = user.first_name;
+              $scope.last_name = user.last_name;
+              $scope.email = user.email;
+              $scope.date_joined = user.date_joined;
+              $scope.last_login = user.last_login;
+              //console.log('success' + data);
+          });
+          error(function(data) {
+              $scope.error = ['Error with user'];
+              console.log('error' + data.error);
+          });
+
+      };
+        //var detailsRequest = $http.get('http://localhost:8001/users/'+ user.id + '/');
+        //detailsRequest.success(function(data){
+        //    console.log('success' + data);
+        //    $scope.details=data;
+        //});
+        //detailsRequest.error(function(data){
+        //    $scope.error = ['Error with user.'];
+        //    console.log('error' + data);
+        //});
+
       $scope.logout = function(){
       Auth.logout();
       $location.path('/home');
-      }
+      };
+
 })
 
-    .controller('racefinderCtrl', function($scope, Auth, $location) {
+    .controller('racefinderCtrl', function($scope, Auth, $http, $cookies, $location) {
+    $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
+    $http.defaults.headers.put['X-CSRFToken'] = $cookies['csrftoken'];
+    $http.defaults.xsrfCookieName = 'csrftoken';
+    $http.defaults.xsrfHeaderName = 'X-CSRFToken';
+
       $scope.logout = function(){
       Auth.logout();
       $location.path('/home');
-      }
+      };
+
+
+
 })
 
     .controller('loginCtrl', function($scope, Auth) {
 
-    })
+    });
 
-    .controller('raceplanCtrl', function($scope, Auth, $location) {
-      $scope.logout = function(){
-      Auth.logout();
-      $location.path('/home');
-      }
-});
+//    .controller('raceplanCtrl', function($scope, Auth, $location) {
+//      $scope.logout = function(){
+//      Auth.logout();
+//      $location.path('/home');
+//      }
+////}
+//);

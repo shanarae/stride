@@ -1,15 +1,29 @@
 <button class="btn pull-right btn" ng-click="logout()">Logout</button>
-<div class="btn-group">
-    <label class="btn btn" ng-model="radioModel" btn-radio="racekeeper"><a ng-href="#/racekeeper">Past Races</a></label>
-    <label class="btn btn" ng-model="radioModel" btn-radio="addrace"><a ng-href="#/racekeeper/addrace">Add a Race</a></label>
-    <label class="btn btn" ng-model="radioModel" btn-radio="raceanalysis"><a ng-href="#/racekeeper/raceanalysis">Race Analysis</a></label>
-</div>
+
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="#/racekeeper">Past Races</a></li>
+  <li role="presentation" class="active"><a href="#/racekeeper/raceanalysis">Race Analysis</a></li>
+  <li role="presentation"><a href="#/racekeeper/addrace">Add a Race</a></li>
+</ul>
 
 <div class="page-header">
     <h1>Performance Analysis</h1>
 </div>
 
-<p class="lead"><strong>{{ getTotalRaces() }}</strong> Races on Record</p>
+<div class="btn pull-right btn-group">
+    <label class="btn btn" ng-model="radioModel" btn-radio="All"><a ng-href="#/racekeeper/raceanalysis">All</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="5K"><a ng-href="#/racekeeper/raceanalysis/5K">5K</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="10K"><a ng-href="#/racekeeper/raceanalysis/10K">10K</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="half"><a ng-href="#/racekeeper/raceanalysis/half">Half Marathon</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="marathon"><a ng-href="#/racekeeper/raceanalysis/marathon">Marathon</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="50K"><a ng-href="#/racekeeper/raceanalysis/50K">50K</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="100K"><a ng-href="#/racekeeper/raceanalysis/100K">100K</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="100M"><a ng-href="#/racekeeper/raceanalysis/100M">100 Mile</a></label>
+</div>
 
-<div class="well">
+<p class="lead">All Races: <strong>{{ getTotalRaces() }}</strong></p>
+<div>
+<div id="racechart"></div>
+<div ng-init="showraceGraph()">
+</div>
 </div>

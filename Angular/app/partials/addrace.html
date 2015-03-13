@@ -1,18 +1,17 @@
 <button class="btn pull-right btn" ng-click="logout()">Logout</button>
-<div class="btn-group">
-    <label class="btn btn" ng-model="radioModel" btn-radio="racekeeper"><a ng-href="#/racekeeper">Past Races</a></label>
-    <label class="btn btn" ng-model="radioModel" btn-radio="addrace"><a ng-href="#/racekeeper/addrace">Add a Race</a></label>
-    <label class="btn btn" ng-model="radioModel" btn-radio="raceanalysis"><a ng-href="#/racekeeper/raceanalysis">Race Analysis</a></label>
-</div>
+
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="#/racekeeper">Past Races</a></li>
+  <li role="presentation"><a href="#/racekeeper/raceanalysis">Race Analysis</a></li>
+  <li role="presentation" class="active"><a href="#/racekeeper/addrace">Add a Race</a></li>
+</ul>
 
 <div class="page-header">
-    <h1>Add Another Race</h1>
+    <h1>Add Race</h1>
 </div>
 
-<p class="lead"><strong>{{ getTotalRaces() }}</strong> Races on Record</p>
-
 <div class="well">
-<p class="lead" id="addrace">Add Race
+<p class="lead" id="addrace">
     <form class="form-group" name="newraceForm">
     <p>Event name:  <input type="text" ng-model="formRaceEvent" required></p>
     <p>Date:  <input type="date" ng-model="formRaceDate" required></p>
@@ -24,17 +23,19 @@
         <option value="26.2">Marathon</option>
         <option value="31.069">50K</option>
         <option value="62.137">100K</option>
-        <option value="100">100 Miles</option></select></p>
+        <option value="100.0">100 Miles</option></select></p>
     <p>Bib number:  <input type="number" ng-model="formRaceBibNumber"></p>
     <!--ng-pattern="(\n{1,2}:)?(\n{1,2}:)?\n{1,2}"-->
-    <p>Finish time:  <input type="text" ng-model="formRaceFinishTime"></p>
+    <p>Finish time (enter as HH:MM:SS):  <input type="text" ng-model="formRaceFinishTime" required></p>
     <p>Total in race:  <input type="number" ng-model="formRaceTotalinRace"></p>
     <p>Overall place:  <input type="number" ng-model="formRaceOverallPlace"></p>
     <p>Total in gender:  <input type="number" ng-model="formRaceTotalinGender"></p>
     <p>Gender place:  <input type="number" ng-model="formRaceGenderPlace"></p>
     <p>Total in age/gender division:  <input type="number" ng-model="formRaceTotalinDivision"></p>
     <p>Division place:  <input type="number" ng-model="formRaceDivisionPlace"></p>
+    <p>Location:  <input type="text" ng-model="formRaceLocation"></p>
     <button class="btn btn-primary" ng-click="addRace()"><strong>Add Race</strong></button>
+    <a href="#/racekeeper" class="btn">Cancel</a>
 </form>
 </p>
 </div>

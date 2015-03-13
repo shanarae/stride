@@ -1,0 +1,53 @@
+<button class="btn pull-right btn" ng-click="logout()">Logout</button>
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="#/racekeeper">Past Races</a></li>
+  <li role="presentation" class="active"><a href="#/racekeeper/raceanalysis">Race Analysis</a></li>
+  <li role="presentation"><a href="#/racekeeper/addrace">Add a Race</a></li>
+</ul>
+
+<div class="page-header">
+    <h1>Performance Analysis</h1>
+</div>
+
+<div class="btn pull-right btn-group">
+    <label class="btn btn" ng-model="radioModel" btn-radio="All"><a ng-href="#/racekeeper/raceanalysis">All</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="5K"><a ng-href="#/racekeeper/raceanalysis/5K">5K</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="10K"><a ng-href="#/racekeeper/raceanalysis/10K">10K</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="half"><a ng-href="#/racekeeper/raceanalysis/half">Half Marathon</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="marathon"><a ng-href="#/racekeeper/raceanalysis/marathon">Marathon</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="50K"><a ng-href="#/racekeeper/raceanalysis/50K">50K</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="100K"><a ng-href="#/racekeeper/raceanalysis/100K">100K</a></label>
+    <label class="btn btn" ng-model="radioModel" btn-radio="100M"><a ng-href="#/racekeeper/raceanalysis/100M">100 Mile</a></label>
+</div>
+
+<p class="lead">Marathon (26.2 Mile) Races: <strong>{{ getTotalMarathons() }}</strong></p>
+
+<div>
+<div id="raceMarathonchart"></div>
+<div ng-init="showraceMarathonGraph()">
+</div>
+</div>
+<hr>
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>My Marathon Races</strong></div>
+        <table class="table">
+        <thead>
+        <tr>
+            <th ng-click="sortBy='event';reverse=!reverse">Event</th>
+            <th ng-click="sortBy='date';reverse=!reverse">Date</th>
+            <th ng-click="sortBy='finishTime';reverse=!reverse">Finish Time</th>
+            <th ng-click="sortBy='pace';reverse=!reverse">Pace</th>
+        </tr>
+        </thead>
+
+        <tbody ng-repeat="marathon in marathons | orderBy: sortBy:reverse" class="marathon">
+            <tr>
+                <td>{{ marathon.event }}</td>
+                <td>{{ marathon.date | date:'MMM d, yyyy' }}</td>
+                <td>{{ marathon.finishTime * 1000 | date:'H:mm:ss':'UTC' }}</td>
+                <td>{{ marathon.pace | pace }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
