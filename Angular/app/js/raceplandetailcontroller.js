@@ -3,300 +3,300 @@
 var DATA_TABLE = {
     3.107 : {
         1 : {
-            SPRINT : {paceMultiple:.75 , description: "10-20 min warmup, 8x400 at target pace w/1 min jogging in between, 10 min cooldown"},
-            TEMPO : {paceMultiple:.8 , description: "1 mile warmup, 2 miles @ target pace, 1 mile cooldown"},
-            LONG: {paceMultiple:1.2 , description: "5 miles @ target pace"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 8x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 2 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "5 miles @ target pace"}
         },
         2 : {
-            SPRINT : {paceMultiple:.75 , description: "10-20 min warmup, 5x800 at target pace w/1 min jogging in between, 10 min cooldown"},
-            TEMPO : {paceMultiple:.8 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
-            LONG: {paceMultiple:1.2 , description: "6 miles @ target pace"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 5x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "6 miles @ target pace"}
         },
         3 : {
-            SPRINT : {paceMultiple:.75 , description: "10-20 min warmup, 2x1600 at target pace w/2 min jogging in between, 10 min cooldown"},
-            TEMPO : {paceMultiple:.8 , description: "1 mile warmup, 4 miles @ target pace, 1 mile cooldown"},
-            LONG: {paceMultiple:1.2 , description: "5 miles @ target pace"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 2x1600 at target pace w/2 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 4 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "5 miles @ target pace"}
         },
         4 : {
-            SPRINT : {paceMultiple:.75 , description: "10-20 min warmup, 4x1000 at target pace w/1 min jogging in between, 10 min cooldown"},
-            TEMPO : {paceMultiple:.8 , description: "1 mile warmup, 4 miles @ target pace, 1 mile cooldown"},
-            LONG: {paceMultiple:1.2 , description: "6 miles @ target pace"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 4x1000 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 4 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "6 miles @ target pace"}
         },
         5 : {
-            SPRINT : {paceMultiple:.75 , description: "10-20 min warmup, 4x1000 at target pace w/1 min jogging in between, 10 min cooldown"},
-            TEMPO : {paceMultiple:.8 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
-            LONG: {paceMultiple:1.2 , description: "7 miles @ target pace"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 4x1000 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "7 miles @ target pace"}
         },
         6 : {
-            SPRINT : {paceMultiple:.75 , description: "10-20 min warmup, 2x1600 at target pace w/2 min jogging in between, 10 min cooldown"},
-            TEMPO : {paceMultiple:.8 , description: "1 mile warmup, 5 miles @ target pace, 1 mile cooldown"},
-            LONG: {paceMultiple:1.2 , description: "6 miles @ target pace"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 2x1600 at target pace w/2 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 5 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "6 miles @ target pace"}
         },
         7 : {
-            SPRINT : {paceMultiple:.75 , description: "10-20 min warmup, 10x400 at target pace w/1 min jogging in between, 10 min cooldown"},
-            TEMPO : {paceMultiple:.8 , description: "1 mile warmup, 4 miles @ target pace, 1 mile cooldown"},
-            LONG: {paceMultiple:1.2 , description: "8 miles @ target pace"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 10x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 4 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "8 miles @ target pace"}
         },
         8 : {
-            SPRINT : {paceMultiple:.75 , description: "10-20 min warmup, 6x800 at target pace w/2 min jogging in between, 10 min cooldown"},
-            TEMPO : {paceMultiple:.8 , description: "1 mile warmup, 5 miles @ target pace, 1 mile cooldown"},
-            LONG: {paceMultiple:1.2 , description: "7 miles @ target pace"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 6x800 at target pace w/2 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 5 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "7 miles @ target pace"}
         },
         9 : {
-            SPRINT : {paceMultiple:.75 , description: "10-20 min warmup, 4x1200 at target pace w/2 min jogging in between, 10 min cooldown"},
-            TEMPO : {paceMultiple:.8 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
-            LONG: {paceMultiple:1.2 , description: "7 miles @ target pace"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 4x1200 at target pace w/2 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "7 miles @ target pace"}
         },
         10 : {
-            SPRINT : {paceMultiple:.75 , description: "10-20 min warmup, 5x1000 at target pace w/1 min jogging in between, 10 min cooldown"},
-            TEMPO : {paceMultiple:.8 , description: "1 mile warmup, 7 miles @ target pace, 1 mile cooldown"},
-            LONG: {paceMultiple:1.2 , description: "7 miles @ target pace"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 5x1000 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 7 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "7 miles @ target pace"}
         },
         11 : {
-            SPRINT : {paceMultiple:.75 , description: "10-20 min warmup, 3x1600 at target pace w/1 min jogging in between, 10 min cooldown"},
-            TEMPO : {paceMultiple:.8 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
-            LONG: {paceMultiple:1.2 , description: "6 miles @ target pace"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 3x1600 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "6 miles @ target pace"}
         },
         12 : {
-            SPRINT : {paceMultiple:.75 , description: "10-20 min warmup, 6x400 at target pace w/1 min jogging in between, 10 min cooldown"},
-            TEMPO : {paceMultiple:.8 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
-            LONG: {paceMultiple:1.0 , description: "RACE DAY! Good luck!"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 6x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.0 , description: "RACE DAY.....    Good luck!"}
         }
     },
     6.214 : {
         1 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 8x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "6 miles @ target pace"}
         },
         2 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 5x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 5 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "7 miles @ target pace"}
         },
         3 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 3x1600 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 4 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "8 miles @ target pace"}
         },
         4 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 10x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 7 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "9 miles @ target pace"}
         },
         5 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 4x1000 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 4 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "10 miles @ target pace"}
         },
         6 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 1600, 1200, 800, 400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 5 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "8 miles @ target pace"}
         },
         7 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 10x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "10 miles @ target pace"}
         },
         8 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 6x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 6 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "8 miles @ target pace"}
         },
         9 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 4x1200 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "10 miles @ target pace"}
         },
         10 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 5x1000 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 6 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "8 miles @ target pace"}
         },
         11 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 3x1600 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.1 , description: "7 miles @ target pace"}
         },
         12 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 6x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.0 , description: "RACE DAY.....    Good luck!"}
         }
     },
     13.1 : {
         1 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 12x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "2 miles warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.04 , description: "8 miles @ target pace"}
         },
         2 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 13x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "5 miles @ target pace"},
+            LONG: {paceMultiple:1.04 , description: "9 miles @ target pace"}
         },
         3 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 6x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "2 miles warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.04 , description: "10 miles @ target pace"}
         },
         4 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 5x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "5 miles @ target pace"},
+            LONG: {paceMultiple:1.04 , description: "9 miles @ target pace"}
         },
         5 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 5x1K at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.04 , description: "9 miles @ target pace"}
         },
         6 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 3x1600 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "6 miles @ target pace"},
+            LONG: {paceMultiple:1.05 , description: "11 miles @ target pace"}
         },
         7 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 2x1200, 4x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 5 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.04 , description: "10 miles @ target pace"}
         },
         8 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 6x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "5 miles @ target pace"},
+            LONG: {paceMultiple:1.05 , description: "12 miles @ target pace"}
         },
         9 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 12x400 at target pace w/2 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 5 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.04 , description: "8 miles @ target pace"}
         },
         10 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 1mi, 2mi, 2x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "5 miles @ target pace"},
+            LONG: {paceMultiple:1.05 , description: "13 miles @ target pace"}
         },
         11 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 6x1200 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "6 miles @ target pace"},
+            LONG: {paceMultiple:1.04 , description: "10 miles @ target pace"}
         },
         12 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 5x1K at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "5 miles @ target pace"},
+            LONG: {paceMultiple:1.05 , description: "14 miles @ target pace"}
         },
         13 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 3x1600 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "6 miles @ target pace"},
+            LONG: {paceMultiple:1.04 , description: "10 miles @ target pace"}
         },
         14 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 10x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "5 miles @ target pace"},
+            LONG: {paceMultiple:1.05 , description: "15 miles @ target pace"}
         },
         15 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.97 , description: "10-20 min warmup, 3x2000 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "1 mile warmup, 5 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.04 , description: "10 miles @ target pace"}
         },
         16 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.98 , description: "10-20 min warmup, 2x3200 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "5 miles @ target pace"},
+            LONG: {paceMultiple:1.04 , description: "12 miles @ target pace"}
         },
         17 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 5x1K at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "2 miles warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.04 , description: "8 miles @ target pace"}
         },
         18 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 6x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "3 miles @ target pace"},
+            LONG: {paceMultiple:1.0 , description: "RACE DAY.....    Good luck!"}
         }
     },
     26.2 : {
         1 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 3x1600 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "2 miles warmup, 2 miles @ target pace, 2 miles cooldown"},
+            LONG: {paceMultiple:1.06 , description: "13 miles @ target pace"}
         },
         2 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 4x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.0 , description: "1 mile warmup, 5 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.09 , description: "15 miles @ target pace"}
         },
         3 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 1200, 1000, 800, 600, 400, 200 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.1 , description: "1 mile warmup, 5 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.09 , description: "17 miles @ target pace"}
         },
         4 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 5x1K at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.1 , description: "1 mile warmup, 4 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.12 , description: "20 miles @ target pace"}
         },
         5 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 3x1600 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "2 miles warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.09 , description: "18 miles @ target pace"}
         },
         6 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 2x1200, 4x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.1 , description: "5 miles @ target pace"},
+            LONG: {paceMultiple:1.09 , description: "20 miles @ target pace"}
         },
         7 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 6x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.1 , description: "1 mile warmup, 6 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.03 , description: "13 miles @ target pace"}
         },
         8 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 12x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "2 miles warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.06 , description: "18 miles @ target pace"}
         },
         9 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 1mi, 2mi, 2x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.1 , description: "1 mile warmup, 4 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.06 , description: "20 miles @ target pace"}
         },
         10 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 6x1200 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.0 , description: "10 miles @ target pace"},
+            LONG: {paceMultiple:1.04 , description: "15 miles @ target pace"}
         },
         11 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 3x1K, 2K at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.1 , description: "1 mile warmup, 5 miles @ target pace"},
+            LONG: {paceMultiple:1.06 , description: "20 miles @ target pace"}
         },
         12 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 3x1600 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.0 , description: "10 miles @ target pace"},
+            LONG: {paceMultiple:1.02 , description: "15 miles @ target pace"}
         },
         13 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 10x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.0 , description: "8 miles @ target pace"},
+            LONG: {paceMultiple:1.03 , description: "20 miles @ target pace"}
         },
         14 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.9 , description: "10-20 min warmup, 8x800 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.1 , description: "5 miles @ target pace"},
+            LONG: {paceMultiple:1.0 , description: "13 miles @ target pace"}
         },
         15 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.95 , description: "10-20 min warmup, 5x1K at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.03 , description: "2 miles warmup, 3 miles @ target pace, 1 mile cooldown"},
+            LONG: {paceMultiple:1.0 , description: "10 miles @ target pace"}
         },
         16 : {
-            SPRINT : {paceMultiple:.8 , description: "describe sprint 1"},
-            TEMPO : {paceMultiple:.8 , description: "describe sprint 1"},
-            LONG: {paceMultiple:.8 , description: "describe sprint 1"}
+            SPRINT : {paceMultiple:.85 , description: "10-20 min warmup, 6x400 at target pace w/1 min jogging in between, 10 min cooldown"},
+            TEMPO : {paceMultiple:1.0 , description: "3 miles @ target pace"},
+            LONG: {paceMultiple:1.0 , description: "RACE DAY.....    Good luck!"}
         }
     }
 };
@@ -304,7 +304,7 @@ var DATA_TABLE = {
 var TYPE = {
     REST : "Rest Day",
     RUN : "Run Workout",
-    CROSS : "Cross Train Workout"
+    CROSS : "Cross Train"
 };
 
 //var Race = function(name, date, distance, pace) {
@@ -351,7 +351,7 @@ var buildPlan = function(race) {
         race.distance=26.2;
     }
     var planStartDate = new Date(Date.parse(race.date));
-    planStartDate.setDate(planStartDate.getDate()-planLength*7);
+    planStartDate.setDate(planStartDate.getDate()-planLength*7+2);
 
     for (var i=0; i<planLength; i++) {
 
@@ -407,6 +407,5 @@ angular.module('angularProject')
             {distance: 62.137, name: '100K'},
             {distance: 100.0, name: '100 Miles'}
         ];
-
 
     });

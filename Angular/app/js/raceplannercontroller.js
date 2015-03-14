@@ -52,6 +52,21 @@ angular.module('angularProject')
             });
         };
 
+        $scope.removePlan = function(race){
+            $http.delete('http://localhost:8001/races/race/'+ race.id + '/').
+            success(function(data){
+                   $scope.races.splice(
+                    $scope.races.indexOf(race),
+                    1
+                );
+            }).
+            error(function(data){
+                $scope.error = ['Error deleting race'];
+                console.log('error' + data.error);
+            });
+
+        };
+
         var racesRequest = $http.get('http://localhost:8001/races/athlete/upcoming/');
         racesRequest.success(function(data){
             console.log('success' + data);

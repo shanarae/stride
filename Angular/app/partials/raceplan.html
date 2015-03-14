@@ -9,11 +9,32 @@
 
  <div class="page-header">
         <h1>Training Planner</h1>
-  </div>
-<p class="lead">Training plans for your upcoming events:</p>
+ </div>
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>Training Plans for My Upcoming Events</strong></div>
+        <table class="table">
+        <thead>
+        <tr>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Distance (miles)</th>
+            <th>Goal Finish Time</th>
+            <th>Goal Pace</th>
+        </tr>
+        </thead>
 
-<ul class="list-group">
-    <li class="list-group-item" ng-repeat="race in races | orderBy:'date'"><a href="#/raceplan/myplans/{{race.id}}">{{race.event}} | {{ race.date | date:'MMM d, yyyy' }}</a></li>
-</ul>
+        <tbody ng-repeat="race in races | orderBy:'date'">
+            <tr>
+                <td><a href="#/raceplan/myplans/{{race.id}}">{{ race.event }}</a></td>
+                <td>{{ race.date | date:'MMM d, yyyy' }}</td>
+                <td>{{ race.distance | number:1 }}</td>
+                <td>{{ race.finishTime * 1000 | date:'H:mm:ss':'UTC' }}</td>
+                <td>{{ race.pace | pace }}</td>
+                <td bn-index-watch><a ng-href="#/racekeeper/{{race.id}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td bn-index-watch><a ng-click="removePlan(race)"><span class='glyphicon glyphicon-trash'></span></a></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
 
 </div>

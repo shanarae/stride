@@ -42,7 +42,7 @@
 
         <tbody ng-repeat="race in races | filter: raceFilter | orderBy: sortBy:reverse" class="race">
             <tr>
-                <td>{{ race.event }}</a></td>
+                <td>{{ race.event }}</td>
                 <td>{{ race.date | date:'MMM d, yyyy' }}</td>
                 <td>{{ race.distance | number:1 }}</td>
                 <td>{{ race.finishTime * 1000 | date:'H:mm:ss':'UTC' }}</td>
