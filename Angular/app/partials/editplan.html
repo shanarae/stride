@@ -1,25 +1,26 @@
+<button class="btn pull-right btn" ng-if="loggedIn != true"><a ng-href="#/login">Login</a></button>
+<div ng-if="loggedIn == true">
 <button class="btn pull-right btn" ng-click="logout()">Logout</button>
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#/racekeeper">Past Races</a></li>
-  <li role="presentation"><a href="#/racekeeper/raceanalysis">Race Analysis</a></li>
-  <li role="presentation"><a href="#/racekeeper/addrace">Add a Race</a></li>
+  <li role="presentation" class="active"><a href="#/raceplan">Existing Plans</a></li>
+  <li role="presentation"><a href="#/raceplan/myplans">Create New Plan</a></li>
 </ul>
 
-<div class="page-header">
+<div class="page-header" ng-controller="raceplaneditCtrl">
     <h1>{{race.event}}</h1>
 </div>
 
-<p class="lead"><strong>Race Detail:</strong></p>
+<p class="lead"><strong>My upcoming race:</strong></p>
 <p>{{ race.event }} on {{ race.date | date:'MMM d, yyyy' }} in {{race.location}} | Distance: {{ race.distance | number:1 }}</p>
 <p>Finish time: {{ race.finishTime }} | Pace: {{ race.pace | pace }}</p>
-
 <hr>
+
 
 <div class="well">
 <p class="lead" id="editrace">
     <form class="form-group" name="editraceForm">
-    <p class="lead"><strong>Update Race:</strong></p>
+    <p class="lead"><strong>Update Race Goals:</strong></p>
     <p>Event name: <input ng-model="race.event" required></p>
     <p>Date:  <input ng-model="race.date" type="date" required></p>
     <p>Distance:  <select ng-model="race.distance" required>
@@ -31,17 +32,10 @@
         <option value="31.069">50K</option>
         <option value="62.137">100K</option>
         <option value="100.0">100 Miles</option></select></p>
-    <p>Bib number:  <input ng-model="race.bibNumber"></p>
     <p>Finish time (enter as HH:MM:SS):  <input ng-model="race.finishTime" required></p>
-    <p>Total in race:  <input ng-model="race.totalinRace"></p>
-    <p>Overall place:  <input ng-model="race.overallPlace"></p>
-    <p>Total in gender:  <input ng-model="race.totalinGender"></p>
-    <p>Gender place:  <input ng-model="race.genderPlace"></p>
-    <p>Total in age/gender division:  <input ng-model="race.totalinDivision"></p>
-    <p>Division place:  <input ng-model="race.divisionPlace"></p>
     <p>Location:  <input ng-model="race.location"></p>
     <button class="btn btn-primary" ng-click="updateRace()"><strong>Update Race</strong></button>
-    <a href="#/racekeeper" class="btn">Cancel</a>
+    <a href="#/raceplan" class="btn">Cancel</a>
 </form>
 </p>
 </div>

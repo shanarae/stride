@@ -35,7 +35,7 @@
         <tbody ng-repeat="week in plan.weeks" class="">
             <tr>
                 <td style="width:10%;">{{ week.weekStartDate | date:'shortDate' }}</td>
-                <td style="width:10%;" ng-repeat="day in week.days" input type="checkbox"><strong>{{day.workout.type}}</strong><br> {{day.workout.description}} <br> <i>Target Pace: {{day.workout.pace | pace}}</i> <br>Done! <input type="checkbox"></td>
+                <td style="width:10%;" ng-repeat="day in week.days"><strong>{{day.workout.type}}</strong><br> {{day.workout.description}} <span ng-if="day.workout.pace"><br> <i>Target Pace: {{day.workout.pace | pace}}</i> </span><br></td>
             </tr>
         </tbody>
     </table>

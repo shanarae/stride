@@ -1,3 +1,4 @@
+from rest_framework.generics import ListCreateAPIView
 from models import Address
 from serializers import UserSerializer, AddressSerializer, CreateUserSerializer
 from rest_framework import generics
@@ -48,3 +49,19 @@ class AddressDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class RegisterUser(generics.CreateAPIView):
     serializer_class = CreateUserSerializer
+
+
+class UserProfile(generics.ListCreateAPIView):
+    # serializer_class = UserSerializer
+    #
+    # def get_queryset(self):
+    #     user = User.objects.filter(username=self.request.user.username)
+    #     return User.objects.filter(user=user)
+
+
+    def get_queryset(self):
+        return User.objects.filter(username=self.request.user.username)
+
+    permission_classes = (permissions.IsAuthenticated,)
+    model = User
+    serializer_class = UserSerializer

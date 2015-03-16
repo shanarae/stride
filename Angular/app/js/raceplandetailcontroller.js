@@ -307,13 +307,6 @@ var TYPE = {
     CROSS : "Cross Train"
 };
 
-//var Race = function(name, date, distance, pace) {
-//    this.date = new Date(Date.parse(date));
-//    this.pace = pace;
-//    this.distance = distance;
-//    this.name = name;
-//};
-
 var Workout = function(type, description, pace) {
     this.type = type;
     this.description = description;
@@ -348,21 +341,22 @@ var buildPlan = function(race) {
 
     } else {
         planLength = 16;
-        race.distance=26.2;
     }
     var planStartDate = new Date(Date.parse(race.date));
     planStartDate.setDate(planStartDate.getDate()-planLength*7+2);
+
+    var actualDistance = (race.distance > 26.2) ? 26.2 : race.distance;
 
     for (var i=0; i<planLength; i++) {
 
         var days = [
             {workout: new Workout(TYPE.REST)},
             {workout: new Workout(TYPE.CROSS)},
-            {workout: createRunWorkout("SPRINT", planLength, i+1, race.pace, race.distance)},
+            {workout: createRunWorkout("SPRINT", planLength, i+1, race.pace, actualDistance)},
             {workout: new Workout(TYPE.CROSS)},
             {workout: new Workout(TYPE.REST)},
-            {workout: createRunWorkout("TEMPO", planLength, i+1, race.pace, race.distance)},
-            {workout: createRunWorkout("LONG", planLength, i+1, race.pace, race.distance)}
+            {workout: createRunWorkout("TEMPO", planLength, i+1, race.pace, actualDistance)},
+            {workout: createRunWorkout("LONG", planLength, i+1, race.pace, actualDistance)}
         ];
 
         weeks.push({

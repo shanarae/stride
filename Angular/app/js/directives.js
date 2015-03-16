@@ -74,8 +74,10 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
  		}
  	})
 
+
+
     .directive('myMap', function() {
-        // directive link function
+
         var link = function(scope, element, attrs) {
             var map, infoWindow;
             var markers = [];
@@ -136,4 +138,32 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
             replace: true,
             link: link
         };
+
+
+        //var cities = new Array(
+        //'Dorćol, Belgrade, Serbia',
+        //'Dorćol, Belgrade, Serbia',
+        //'Dorćol, Belgrade, Serbia',
+        //'Rome, Italy',
+        //'Rome, Italy');
+        //
+        //var gmarkers = [];
+        //mc = new MarkerClusterer(map, [], mcOptions);
+        //for (i=0; i<cities.length; i++) {
+        //    var ptStr = cities[i];
+        //}
+        //
+        //var newAddress;
+        //
+        ////Key Part Here!!! These should be cached somewhere rather than querying every page refresh like here though.
+        //geocoder.geocode( { 'address': cities[i] }, function(results, status) {
+        //    if (status == google.maps.GeocoderStatus.OK) {
+        //        newAddress = results[0].geometry.location;
+        //        var latlng = new google.maps.LatLng(parseFloat(newAddress.lat()),parseFloat(newAddress.lng()));
+        //        gmarkers.push(createMarker(latlng,content[i]));
+        //    }
+        //});
+
+
+
     });

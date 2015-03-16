@@ -22,6 +22,11 @@ angular.module('angularProject', ['ngRoute','angularProject.filters', 'angularPr
         templateUrl: 'partials/profile.html',
         controller: 'profileCtrl'
         })
+      .when('/profile/:detailId', {
+        title: 'Edit Profile',
+        templateUrl: 'partials/editprofile.html',
+        controller: 'editprofileCtrl'
+        })
       .when('/register', {
         title: 'Register',
         templateUrl: 'partials/register.html',
@@ -101,6 +106,11 @@ angular.module('angularProject', ['ngRoute','angularProject.filters', 'angularPr
         title: 'Plan Detail',
         templateUrl: 'partials/plandetail.html',
         controller: 'raceplandetailCtrl'
+        })
+      .when('/raceplan/edit/:raceId', {
+        title: 'Edit Plan',
+        templateUrl: 'partials/editplan.html',
+        controller: 'raceplaneditCtrl'
         })
       .otherwise({redirectTo: '/home'});
   }])

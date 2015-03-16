@@ -6,7 +6,7 @@ angular.module('angularProject')
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
     })
 
-    .controller('racedetailCtrl', function ($scope, $routeParams, $http, Auth, $cookies, $location, $filter) {
+    .controller('raceplaneditCtrl', function ($scope, $routeParams, $http, Auth, $cookies, $location, $filter) {
     $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
     $http.defaults.headers.put['X-CSRFToken'] = $cookies['csrftoken'];
     $http.defaults.xsrfCookieName = 'csrftoken';
@@ -48,7 +48,7 @@ angular.module('angularProject')
             $http.put(url, data).
             success(function(data){
                 console.log("Success" + data);
-                $location.path('/racekeeper');
+                $location.path('/raceplan');
                 }).
             error(function(data) {
                 console.log("Error" + data);
@@ -61,4 +61,5 @@ angular.module('angularProject')
         };
 
     });
+
 

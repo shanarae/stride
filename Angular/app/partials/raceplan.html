@@ -30,7 +30,7 @@
                 <td>{{ race.distance | number:1 }}</td>
                 <td>{{ race.finishTime * 1000 | date:'H:mm:ss':'UTC' }}</td>
                 <td>{{ race.pace | pace }}</td>
-                <td bn-index-watch><a ng-href="#/racekeeper/{{race.id}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td bn-index-watch><a ng-href="#/raceplan/edit/{{race.id}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
                 <td bn-index-watch><a ng-click="removePlan(race)"><span class='glyphicon glyphicon-trash'></span></a></td>
             </tr>
         </tbody>

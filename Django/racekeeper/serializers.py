@@ -7,6 +7,7 @@ class UserSerialize(serializers.ModelSerializer):
 
     class Meta:
         model = User
+        fields = ("id", "last_login", "username", "first_name", "last_name", "email", "date_joined")
 
 
 class RaceSerializer(serializers.ModelSerializer):

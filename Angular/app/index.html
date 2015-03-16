@@ -44,7 +44,7 @@
               <li ng-class="{active: isActive('#/raceplan')}"><a ng-href="#/raceplan">Training Planner</a></li>
               <li ng-class="{active: isActive('#/profile')}"><a ng-href="#/profile">Profile</a></li>
               <li ng-class="{active: isActive('#/register')}"><a ng-href="#/register">Register</a></li>
-              <li ng-if="loggedIn == true">Welcome back! {{logname}}</li>
+              <li ng-if="loggedIn == true">Welcome back! {{user.username}}</li>
             </ul>
           </div>
         </div>
@@ -74,6 +74,9 @@
   <script src="js/racedetailcontroller.js"></script>
   <script src="js/raceplannercontroller.js"></script>
   <script src="js/raceplandetailcontroller.js"></script>
+  <script src="js/raceplaneditcontroller.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/editprofile.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
   <script src="js/ui-bootstrap-tpls-0.3.0.js"></script>

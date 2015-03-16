@@ -2,11 +2,10 @@
 
 var controllersModule = angular.module('angularProject.controllers', []) 
 
-    .controller('homeCtrl', function($scope, Auth, User, Address, $location) {
+    .controller('homeCtrl', function($scope, $http, Auth, User, Address, $location) {
 
       $scope.users = User.query();
       $scope.addresses = Address.query();
-
 
       $scope.logout = function(){
           Auth.logout();
@@ -15,7 +14,7 @@ var controllersModule = angular.module('angularProject.controllers', [])
 
 })
 
-    .controller('registerCtrl', function($scope, Auth, $http, $cookies, $location, $cookieStore, authService, $rootScope) {
+    .controller('registerCtrl', function($scope, Auth, $http, $cookies, $location, $cookieStore, authService) {
     $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
     $http.defaults.headers.put['X-CSRFToken'] = $cookies['csrftoken'];
     $http.defaults.xsrfCookieName = 'csrftoken';
@@ -65,50 +64,6 @@ var controllersModule = angular.module('angularProject.controllers', [])
       }
 })
 
-    .controller('profileCtrl', function($scope, Auth, $http, $cookies, $location) {
-    $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
-    $http.defaults.headers.put['X-CSRFToken'] = $cookies['csrftoken'];
-    $http.defaults.xsrfCookieName = 'csrftoken';
-    $http.defaults.xsrfHeaderName = 'X-CSRFToken';
-
-
-      $scope.getUser = function() {
-          $http.get('http://localhost:8001/users/' + user.id + '/');
-
-          success(function(data) {
-              $scope.user=data;
-              return $scope.user;
-              $scope.username = user.username;
-              $scope.first_name = user.first_name;
-              $scope.last_name = user.last_name;
-              $scope.email = user.email;
-              $scope.date_joined = user.date_joined;
-              $scope.last_login = user.last_login;
-              //console.log('success' + data);
-          });
-          error(function(data) {
-              $scope.error = ['Error with user'];
-              console.log('error' + data.error);
-          });
-
-      };
-        //var detailsRequest = $http.get('http://localhost:8001/users/'+ user.id + '/');
-        //detailsRequest.success(function(data){
-        //    console.log('success' + data);
-        //    $scope.details=data;
-        //});
-        //detailsRequest.error(function(data){
-        //    $scope.error = ['Error with user.'];
-        //    console.log('error' + data);
-        //});
-
-      $scope.logout = function(){
-      Auth.logout();
-      $location.path('/home');
-      };
-
-})
-
     .controller('racefinderCtrl', function($scope, Auth, $http, $cookies, $location) {
     $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
     $http.defaults.headers.put['X-CSRFToken'] = $cookies['csrftoken'];
@@ -120,6 +75,15 @@ var controllersModule = angular.module('angularProject.controllers', [])
       $location.path('/home');
       };
 
+      var cities = $http.get('http://localhost:8001/races/athlete/locations/');
+        cities.success(function(data) {
+            console.log('success' + data);
+            scope.cities=data;
+        });
+        cities.error(function(data) {
+            scope.error= ['Error with cities.'];
+            console.log('error' + data);
+        });
 
 
 })
@@ -128,10 +92,3 @@ var controllersModule = angular.module('angularProject.controllers', [])
 
     });
 
-//    .controller('raceplanCtrl', function($scope, Auth, $location) {
-//      $scope.logout = function(){
-//      Auth.logout();
-//      $location.path('/home');
-//      }
-////}
-//);
