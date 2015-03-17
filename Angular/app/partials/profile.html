@@ -5,11 +5,10 @@
     <h1>Athlete Profile</h1>
 </div>
 <div class="well" ng-controller="profileCtrl" ng-repeat="detail in details" class="user">
-<p><strong>Username: </strong>{{detail.username}}</p>
 <p><strong>Name: </strong>{{detail.first_name}} {{detail.last_name}}</p>
-<p><strong>Email address: </strong>{{detail.email}}</p>
-<p><strong>Date joined: </strong>{{detail.date_joined | date:'MMM d, yyyy'}}</p>
-<p><strong>Last login: </strong>{{detail.last_login | date:'MMM d, yyyy'}}</p>
+<p><strong>Username: </strong>{{detail.username}}</p>
+<p><strong>Email: </strong>{{detail.email}}</p>
+<p><strong>Date Joined: </strong>{{detail.date_joined | date:'MMM d, yyyy'}}</p>
 <button class="btn btn"><a ng-href="#/profile/{{detail.id}}">Edit Profile</a></button>
 </div>
 

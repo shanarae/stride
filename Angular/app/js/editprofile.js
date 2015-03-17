@@ -6,7 +6,7 @@ angular.module('angularProject')
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
     })
 
-    .controller('editprofileCtrl', function ($http, $scope, Auth, $cookies, $location) {
+    .controller('editprofileCtrl', function ($http, $scope, $routeParams, Auth, $cookies, $location) {
         $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
         $http.defaults.headers.put['X-CSRFToken'] = $cookies['csrftoken'];
         $http.defaults.xsrfCookieName = 'csrftoken';
@@ -17,14 +17,28 @@ angular.module('angularProject')
             $location.path('/home');
         };
 
-        var detailsRequest = $http.get('http://localhost:8001/users/myprofile/');
-        detailsRequest.success(function (data) {
-            console.log('success' + data);
-            $scope.details = data;
+        $http.get('http://localhost:8001/users/' + $routeParams.userId).success(function(data) {
+            $scope.user = data;
         });
-        detailsRequest.error(function (data) {
-            $scope.error = ['Error with user details.'];
-            console.log('error' + data);
-        });
+
+        $scope.updateProfile = function() {
+            var url = 'http://localhost:8001/users/' + $routeParams.userId;
+            var data = {
+                'username':$scope.user.username,
+                'first_name':$scope.user.first_name,
+                'last_name':$scope.user.last_name,
+                'email':$scope.user.email,
+                'last_login':$scope.user.last_login,
+                'date_joined':$scope.user.date_joined
+            };
+            $http.put(url, data).
+            success(function(data){
+                console.log("Success" + data);
+                $location.path('/profile');
+                }).
+            error(function(data) {
+                console.log("Error" + data);
+            });
+        };
 
     });

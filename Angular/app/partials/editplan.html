@@ -11,16 +11,9 @@
     <h1>{{race.event}}</h1>
 </div>
 
-<p class="lead"><strong>My upcoming race:</strong></p>
-<p>{{ race.event }} on {{ race.date | date:'MMM d, yyyy' }} in {{race.location}} | Distance: {{ race.distance | number:1 }}</p>
-<p>Finish time: {{ race.finishTime }} | Pace: {{ race.pace | pace }}</p>
-<hr>
-
-
 <div class="well">
-<p class="lead" id="editrace">
     <form class="form-group" name="editraceForm">
-    <p class="lead"><strong>Update Race Goals:</strong></p>
+    <p class="lead" id="editrace"><strong>Update race goals:</strong></p>
     <p>Event name: <input ng-model="race.event" required></p>
     <p>Date:  <input ng-model="race.date" type="date" required></p>
     <p>Distance:  <select ng-model="race.distance" required>

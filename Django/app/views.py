@@ -1,4 +1,3 @@
-from rest_framework.generics import ListCreateAPIView
 from models import Address
 from serializers import UserSerializer, AddressSerializer, CreateUserSerializer
 from rest_framework import generics
@@ -17,7 +16,7 @@ class UserList(generics.ListCreateAPIView):
     serializer_class = UserSerializer
 
 
-class UserDetail(generics.RetrieveAPIView):
+class UserDetail(generics.RetrieveUpdateAPIView):
     """Retrieve, update or delete a User instance."""
     def get_queryset(self):
         return User.objects.filter(username=self.request.user.username)
@@ -52,12 +51,6 @@ class RegisterUser(generics.CreateAPIView):
 
 
 class UserProfile(generics.ListCreateAPIView):
-    # serializer_class = UserSerializer
-    #
-    # def get_queryset(self):
-    #     user = User.objects.filter(username=self.request.user.username)
-    #     return User.objects.filter(user=user)
-
 
     def get_queryset(self):
         return User.objects.filter(username=self.request.user.username)

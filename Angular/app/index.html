@@ -44,7 +44,8 @@
               <li ng-class="{active: isActive('#/raceplan')}"><a ng-href="#/raceplan">Training Planner</a></li>
               <li ng-class="{active: isActive('#/profile')}"><a ng-href="#/profile">Profile</a></li>
               <li ng-class="{active: isActive('#/register')}"><a ng-href="#/register">Register</a></li>
-              <li ng-if="loggedIn == true">Welcome back! {{user.username}}</li>
+              <li ng-if="loggedIn == true"><strong> {{logname}}
+                <span ng-repeat="detail in details">{{detail.username}}</span></strong></li>
             </ul>
           </div>
         </div>

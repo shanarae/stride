@@ -22,7 +22,7 @@ angular.module('angularProject', ['ngRoute','angularProject.filters', 'angularPr
         templateUrl: 'partials/profile.html',
         controller: 'profileCtrl'
         })
-      .when('/profile/:detailId', {
+      .when('/profile/:userId', {
         title: 'Edit Profile',
         templateUrl: 'partials/editprofile.html',
         controller: 'editprofileCtrl'

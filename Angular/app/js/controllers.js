@@ -10,8 +10,17 @@ var controllersModule = angular.module('angularProject.controllers', [])
       $scope.logout = function(){
           Auth.logout();
           $location.path('/home');
-      }
+      };
 
+        var detailsRequest = $http.get('http://localhost:8001/users/myprofile/');
+        detailsRequest.success(function (data) {
+            console.log('success' + data);
+            $scope.details = data;
+        });
+        detailsRequest.error(function (data) {
+            $scope.error = ['Error with user details.'];
+            console.log('error' + data);
+        });
 })
 
     .controller('registerCtrl', function($scope, Auth, $http, $cookies, $location, $cookieStore, authService) {

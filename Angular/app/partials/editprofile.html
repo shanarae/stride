@@ -4,13 +4,17 @@
 <div class="page-header">
     <h1>Edit Profile</h1>
 </div>
-<div class="well" ng-controller="profileCtrl" ng-repeat="detail in details" class="user">
-<p><strong>Username: </strong>{{detail.username}}</p>
-<p><strong>Name: </strong>{{detail.first_name}} {{detail.last_name}}</p>
-<p><strong>Email address: </strong>{{detail.email}}</p>
-<p><strong>Date joined: </strong>{{detail.date_joined | date:'MMM d, yyyy'}}</p>
-<p><strong>Last login: </strong>{{detail.last_login | date:'MMM d, yyyy'}}</p>
-<button class="btn btn"><a ng-href="#/profile/{{detail.id}}">Edit Profile</a></button>
+<div class="well" ng-controller="editprofileCtrl" class="user">
+<p class="lead" id="editprofile">
+    <form class="form-group" name="editprofileForm">
+    <p class="lead"><strong>Update Profile:</strong></p>
+    <p>First Name: <input ng-model="user.first_name" required></p>
+    <p>Last Name: <input ng-model="user.last_name" required></p>
+    <p>Username: <input ng-model="user.username" required</p>
+    <p>Email: <input ng-model="user.email" required></p>
+    <button class="btn btn-primary" ng-click="updateProfile()"><strong>Update</strong></button>
+    <a href="#/profile" class="btn">Cancel</a>
+    </form>
+</p>
 </div>
-
 </div>
