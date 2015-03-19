@@ -116,27 +116,55 @@ angular.module('angularProject')
                 'divisionPlace':$scope.formRaceDivisionPlace,
                 'location':$scope.formRaceLocation
             };
-
-            $http.post('http://localhost:8001/races/create/', data).
-            success(function(data){
-                $scope.races.push({event:data.event, date:data.date, distance:data.distance, bibNumber:data.bibNumber, finishTime:data.finishTime, totalinRace:data.totalinRace, overallPlace:data.overallPlace, totalinGender:data.totalinGender, genderPlace:data.genderPlace, totalinDivision:data.totalinDivision, divisionPlace:data.divisionPlace, location:data.location});
-                $scope.formRaceEvent = '';
-                $scope.formRaceDate = '';
-                $scope.formRaceDistance = '';
-                $scope.formRaceBibNumber = '';
-                $scope.formRaceFinishTime = '';
-                $scope.formRaceTotalinRace = '';
-                $scope.formRaceOverallPlace = '';
-                $scope.formRaceTotalinGender = '';
-                $scope.formRaceGenderPlace = '';
-                $scope.formRaceTotalinDivision = '';
-                $scope.formRaceDivisionPlace = '';
-                $scope.formRaceLocation = '';
-                $location.path('/racekeeper');
-            }).
-            error(function(data){
-                $scope.error = ['Error adding new race'];
-                console.log('error' + data.error);
+            var geoCoder = new google.maps.Geocoder();
+            geoCoder.geocode (
+                { address: data.location },
+                function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        var newAddress = results[0].geometry.location;
+                        data.latitude = parseFloat(newAddress.lat());
+                        data.longitude = parseFloat(newAddress.lng());
+                        $http.post('http://localhost:8001/races/create/', data).
+                        success(function(data){
+                            $scope.races.push(
+                                {
+                                    event:data.event,
+                                    date:data.date,
+                                    distance:data.distance,
+                                    bibNumber:data.bibNumber,
+                                    finishTime:data.finishTime,
+                                    totalinRace:data.totalinRace,
+                                    overallPlace:data.overallPlace,
+                                    totalinGender:data.totalinGender,
+                                    genderPlace:data.genderPlace,
+                                    totalinDivision:data.totalinDivision,
+                                    divisionPlace:data.divisionPlace,
+                                    location:data.location,
+                                    latitude:data.latitude,
+                                    longitude:data.longitude
+                                });
+                            $scope.formRaceEvent = '';
+                            $scope.formRaceDate = '';
+                            $scope.formRaceDistance = '';
+                            $scope.formRaceBibNumber = '';
+                            $scope.formRaceFinishTime = '';
+                            $scope.formRaceTotalinRace = '';
+                            $scope.formRaceOverallPlace = '';
+                            $scope.formRaceTotalinGender = '';
+                            $scope.formRaceGenderPlace = '';
+                            $scope.formRaceTotalinDivision = '';
+                            $scope.formRaceDivisionPlace = '';
+                            $scope.formRaceLocation = '';
+                            $location.path('/racekeeper');
+                        }).
+                        error(function(data){
+                            $scope.error = ['Error adding new race'];
+                            console.log('error' + data.error);
+                        });
+                    } else {
+                        $scope.error = ['Error adding new race. Bad Location.'];
+                        console.log('error' + data.error);
+                    }
             });
         };
 

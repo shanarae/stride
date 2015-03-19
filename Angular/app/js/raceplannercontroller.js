@@ -36,19 +36,41 @@ angular.module('angularProject')
                 'location':$scope.formPlanLocation
             };
 
-            $http.post('http://localhost:8001/races/create/', data).
-            success(function(data){
-                $scope.races.push({event:data.event, date:data.date, distance:data.distance, finishTime:data.finishTime, location:data.location});
-                $scope.formPlanEvent = '';
-                $scope.formPlanDate = '';
-                $scope.formPlanDistance = '';
-                $scope.formPlanFinishTime = '';
-                $scope.formPlanLocation = '';
-                $location.path('/raceplan');
-            }).
-            error(function(data){
-                $scope.error = ['Error adding new plan'];
-                console.log('error' + data.error);
+            var geoCoder = new google.maps.Geocoder();
+            geoCoder.geocode (
+                { address: data.location },
+                function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        var newAddress = results[0].geometry.location;
+                        data.latitude = parseFloat(newAddress.lat());
+                        data.longitude = parseFloat(newAddress.lng());
+                        $http.post('http://localhost:8001/races/create/', data).
+                        success(function(data){
+                            $scope.races.push(
+                                {
+                                    event:data.event,
+                                    date:data.date,
+                                    distance:data.distance,
+                                    finishTime:data.finishTime,
+                                    location:data.location,
+                                    latitude:data.latitude,
+                                    longitude:data.longitude
+                                });
+                            $scope.formRaceEvent = '';
+                            $scope.formRaceDate = '';
+                            $scope.formRaceDistance = '';
+                            $scope.formRaceFinishTime = '';
+                            $scope.formRaceLocation = '';
+                            $location.path('/raceplan');
+                        }).
+                        error(function(data){
+                            $scope.error = ['Error adding new plan'];
+                            console.log('error' + data.error);
+                        });
+                    } else {
+                        $scope.error = ['Error adding new plan. Bad Location.'];
+                        console.log('error' + data.error);
+                    }
             });
         };
 

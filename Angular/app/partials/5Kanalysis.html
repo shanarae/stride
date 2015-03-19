@@ -11,7 +11,7 @@
 
 <div class="btn pull-right btn-group">
     <label class="btn btn" ng-model="radioModel" btn-radio="All"><a ng-href="#/racekeeper/raceanalysis">All</a></label>
-    <label class="btn btn" ng-model="radioModel" btn-radio="5K"><a ng-href="#/racekeeper/raceanalysis/5K">5K</a></label>
+    <label class="btn btn active" ng-model="radioModel" btn-radio="5K"><a ng-href="#/racekeeper/raceanalysis/5K">5K</a></label>
     <label class="btn btn" ng-model="radioModel" btn-radio="10K"><a ng-href="#/racekeeper/raceanalysis/10K">10K</a></label>
     <label class="btn btn" ng-model="radioModel" btn-radio="half"><a ng-href="#/racekeeper/raceanalysis/half">Half Marathon</a></label>
     <label class="btn btn" ng-model="radioModel" btn-radio="marathon"><a ng-href="#/racekeeper/raceanalysis/marathon">Marathon</a></label>
@@ -30,7 +30,7 @@
 <hr>
     <div class="panel panel-default">
         <div class="panel-heading"><strong>My 5K Races</strong></div>
-        <table class="table">
+        <table class="table table-hover">
         <thead>
         <tr>
             <th ng-click="sortBy='event';reverse=!reverse">Event</th>

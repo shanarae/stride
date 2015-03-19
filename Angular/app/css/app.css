@@ -7,11 +7,10 @@
 }
 
 .other-color {
-    background: #5cc9f9;
+    background: url("../img/img_1980.jpg") no-repeat center center;
+    background-size: cover;
 }
-
 #gmaps {
     width: 1050px;
     height: 450px;
 }
-

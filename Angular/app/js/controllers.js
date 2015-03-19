@@ -74,28 +74,16 @@ var controllersModule = angular.module('angularProject.controllers', [])
 })
 
     .controller('racefinderCtrl', function($scope, Auth, $http, $cookies, $location) {
-    $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
-    $http.defaults.headers.put['X-CSRFToken'] = $cookies['csrftoken'];
-    $http.defaults.xsrfCookieName = 'csrftoken';
-    $http.defaults.xsrfHeaderName = 'X-CSRFToken';
+        $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
+        $http.defaults.headers.put['X-CSRFToken'] = $cookies['csrftoken'];
+        $http.defaults.xsrfCookieName = 'csrftoken';
+        $http.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-      $scope.logout = function(){
-      Auth.logout();
-      $location.path('/home');
-      };
-
-      var cities = $http.get('http://localhost:8001/races/athlete/locations/');
-        cities.success(function(data) {
-            console.log('success' + data);
-            scope.cities=data;
-        });
-        cities.error(function(data) {
-            scope.error= ['Error with cities.'];
-            console.log('error' + data);
-        });
-
-
-})
+        $scope.logout = function(){
+            Auth.logout();
+            $location.path('/home');
+        };
+    })
 
     .controller('loginCtrl', function($scope, Auth) {
 

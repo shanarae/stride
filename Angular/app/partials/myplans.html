@@ -11,20 +11,27 @@
 
 <p class="lead">Let's start planning your next event by creating a day-by-day training plan based on your race goal time.</p>
 <div class="well">
-    <form class="form-group" name="newplanForm">
-    <p class="lead" id="raceplan"><strong>Enter the details about your upcoming race and goals:</strong></p>
-    <div class="control-group">
-        <label>Event name:  </label>
-        <input type="text" ng-model="formPlanEvent" required>
+    <p class="lead"><strong>Enter the details about your upcoming race and goals.</strong></p>
+    <form name="newplanForm" id="addplan">
+
+    <div class="form-group">
+        <label for="formPlanEvent">Event name:</label>
+        <input type="text" class="form-control" id="formPlanEvent" ng-model="formPlanEvent" placeholder="Enter name of event" required>
     </div>
-    <br>
-    <div class="control-group">
-        <label>Date:  </label>
-        <input type="date" ng-model="formPlanDate" required>
+
+    <div class="form-group">
+        <label for="formPlanDate">Date:</label>
+        <input type="date" class="form-control" id="formPlanDate" ng-model="formPlanDate" required>
     </div>
-    <br>
-    <div class="control-group">
-        <label>Distance:  </label><select ng-model="formPlanDistance" required>
+
+    <div class="form-group">
+        <label for="formPlanLocation">Location:</label>
+        <input type="text" class="form-control" id="formPlanLocation" ng-model="formPlanLocation" placeholder="Enter city/state or zip of race location" required>
+    </div>
+
+    <div class="form-group">
+        <label for="formPlanDistance">Distance:</label>
+        <select class="form-control" id="formPlanDistance" ng-model="formPlanDistance" required>
         <option style="display:none" value class>select a distance</option>
         <option value="3.107">5K</option>
         <option value="6.214">10K</option>
@@ -32,20 +39,16 @@
         <option value="26.2">Marathon</option>
         <option value="31.069">50K</option>
         <option value="62.137">100K</option>
-        <option value="100.0">100 Miles</option></select>
+        <option value="100.0">100 Miles</option>
+        </select>
     </div>
-    <br>
-    <div class="control-group">
-        <label>Finish time goal (enter as HH:MM:SS):  </label>
-        <input type="text" ng-model="formPlanFinishTime" required>
+
+    <div class="form-group">
+        <label for="formPlanFinishTime">Finish time goal (as HH:MM:SS):</label>
+        <input type="text" class="form-control" id="formPlanFinishTime" ng-model="formPlanFinishTime" placeholder="Enter your goal finish time as HH:MM:SS" required>
     </div>
-    <br>
-    <div class="control-group">
-        <label>Location:  </label>
-        <input type="text" ng-model="formPlanLocation">
-    </div>
-    <br>
-    <button class="btn btn-primary" ng-click="createPlan()"><strong>Create a Plan</strong></button>
+
+    <button type="submit" class="btn btn-primary" ng-click="createPlan()">Submit</button>
     <a href="#/raceplan" class="btn">Cancel</a>
 </form>
 </div>

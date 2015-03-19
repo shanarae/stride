@@ -15,7 +15,7 @@ class RaceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Race
-        fields = ("id", "user", "event", "date", "distance", "bibNumber", "finishTime", "totalinRace", "overallPlace", "totalinGender", "genderPlace", "totalinDivision", "divisionPlace", "pace", "overallPercentile", "genderPercentile", "divisionPercentile", "distanceLabel", "location")
+        fields = ("id", "user", "event", "date", "distance", "bibNumber", "finishTime", "totalinRace", "overallPlace", "totalinGender", "genderPlace", "totalinDivision", "divisionPlace", "pace", "overallPercentile", "genderPercentile", "divisionPercentile", "distanceLabel", "location", "latitude", "longitude")
 
 
 class AnalysisSerializer(serializers.ModelSerializer):
@@ -30,4 +30,4 @@ class LocationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Race
-        fields = ("id", "user", "event", "date", "distance", "location")
+        fields = ("id", "user", "event", "date", "distance", "location", "latitude", "longitude")

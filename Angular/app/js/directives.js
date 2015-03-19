@@ -76,15 +76,14 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
 
 
 
-    .directive('myMap', function() {
-
+    .directive('myMap', function($http, $cookies) {
         var link = function(scope, element, attrs) {
-            var map, infoWindow;
+            var map, infoWindow, geoCoder;
             var markers = [];
 
             // map config
             var mapOptions = {
-                center: new google.maps.LatLng(50, 2),
+                center: new google.maps.LatLng(37.7833, -100),
                 zoom: 4,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 scrollwheel: false
@@ -94,6 +93,7 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
             function initMap() {
                 if (map === void 0) {
                     map = new google.maps.Map(element[0], mapOptions);
+                    geoCoder = new google.maps.Geocoder();
                 }
             }
 
@@ -104,6 +104,7 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
                     position: position,
                     map: map,
                     title: title,
+                    content: content,
                     icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
                 };
 
@@ -127,9 +128,51 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
             // show the map and place some markers
             initMap();
 
-            setMarker(map, new google.maps.LatLng(51.508515, -0.125487), 'London', 'Just some content');
-            setMarker(map, new google.maps.LatLng(52.370216, 4.895168), 'Amsterdam', 'More content');
-            setMarker(map, new google.maps.LatLng(48.856614, 2.352222), 'Paris', 'Text here');
+            $http.defaults.headers.post['X-CSRFToken'] = $cookies['csrftoken'];
+            $http.defaults.headers.put['X-CSRFToken'] = $cookies['csrftoken'];
+            $http.defaults.xsrfCookieName = 'csrftoken';
+            $http.defaults.xsrfHeaderName = 'X-CSRFToken';
+
+            var raceLocations = $http.get('http://localhost:8001/races/athlete/locations/');
+
+            raceLocations.success(function(data) {
+                console.log('success' + JSON.stringify(data));
+                for (var i = 0; i < data.length; i++) {
+                    var raceLocation = data[i];
+                    if (raceLocation.latitude && raceLocation.longitude) {
+                        var latlng = new google.maps.LatLng(raceLocation.latitude, raceLocation.longitude);
+                        setMarker(map, latlng, raceLocation.location, raceLocation.event, raceLocation.distance);
+                    }
+                }
+
+                //var i = 0;
+                //var interval = setInterval(function(){
+                //    {
+                //        (
+                //            function(location,event){
+                //                geoCoder.geocode ({ address: location },
+                //                (function (results, status) {
+                //                    if (status == google.maps.GeocoderStatus.OK) {
+                //                        var newAddress = results[0].geometry.location;
+                //                        var latlng = new google.maps.LatLng(parseFloat(newAddress.lat()), parseFloat(newAddress.lng()));
+                //                        setMarker(map, latlng, location, event);
+                //                    } else {
+                //                        console.log("geocoder error: " + status)
+                //                    }
+                //                }))
+                //            })(data[i].location, data[i].event);
+                //    }
+                //    //increment the index
+                //    if (++i >= data.length ) clearInterval(interval);
+                //}, 2000);
+
+
+            });
+
+            raceLocations.error(function(data) {
+                //scope.error= ['Error with cities.'];
+                console.log('error' + data);
+            });
         };
 
         return {
@@ -152,10 +195,10 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
         //for (i=0; i<cities.length; i++) {
         //    var ptStr = cities[i];
         //}
-        //
+        ////
         //var newAddress;
-        //
-        ////Key Part Here!!! These should be cached somewhere rather than querying every page refresh like here though.
+        ////
+        //////Key Part Here!!! These should be cached somewhere rather than querying every page refresh like here though.
         //geocoder.geocode( { 'address': cities[i] }, function(results, status) {
         //    if (status == google.maps.GeocoderStatus.OK) {
         //        newAddress = results[0].geometry.location;

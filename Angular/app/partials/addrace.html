@@ -11,31 +11,77 @@
 </div>
 
 <div class="well">
-<p class="lead" id="addrace">
-    <form class="form-group" name="newraceForm">
-    <p>Event name:  <input type="text" ng-model="formRaceEvent" required></p>
-    <p>Date:  <input type="date" ng-model="formRaceDate" required></p>
-    <p>Distance:  <select ng-model="formRaceDistance" required>
-        <option style="display:none" value class>select a distance</option>
-        <option value="3.107">5K</option>
-        <option value="6.214">10K</option>
-        <option value="13.1">Half Marathon</option>
-        <option value="26.2">Marathon</option>
-        <option value="31.069">50K</option>
-        <option value="62.137">100K</option>
-        <option value="100.0">100 Miles</option></select></p>
-    <p>Bib number:  <input type="number" ng-model="formRaceBibNumber"></p>
-    <!--ng-pattern="(\n{1,2}:)?(\n{1,2}:)?\n{1,2}"-->
-    <p>Finish time (enter as HH:MM:SS):  <input type="text" ng-model="formRaceFinishTime" required></p>
-    <p>Total in race:  <input type="number" ng-model="formRaceTotalinRace"></p>
-    <p>Overall place:  <input type="number" ng-model="formRaceOverallPlace"></p>
-    <p>Total in gender:  <input type="number" ng-model="formRaceTotalinGender"></p>
-    <p>Gender place:  <input type="number" ng-model="formRaceGenderPlace"></p>
-    <p>Total in age/gender division:  <input type="number" ng-model="formRaceTotalinDivision"></p>
-    <p>Division place:  <input type="number" ng-model="formRaceDivisionPlace"></p>
-    <p>Location:  <input type="text" ng-model="formRaceLocation"></p>
-    <button class="btn btn-primary" ng-click="addRace()"><strong>Add Race</strong></button>
+    <form name="newraceForm" id="addrace">
+    <div class="form-group">
+        <label for="formRaceEvent">Event name:</label>
+        <input type="text" class="form-control" id="formRaceEvent" placeholder="Enter name of event" ng-model="formRaceEvent" required>
+    </div>
+
+    <div class="form-group">
+        <label for="formRaceDate">Date:</label>
+        <input type="date" class="form-control" id="formRaceDate" ng-model="formRaceDate" required>
+    </div>
+
+    <div class="form-group">
+        <label for="formRaceLocation">Location:</label>
+        <input type="text" class="form-control" id="formRaceLocation" placeholder="Enter city/state or zip of race location" ng-model="formRaceLocation" required>
+    </div>
+
+    <div class="form-group">
+        <label for="formRaceDistance">Distance:</label>
+        <select class="form-control" id="formRaceDistance" ng-model="formRaceDistance" required>
+            <option style="display:none" value class>select a distance</option>
+            <option value="3.107">5K</option>
+            <option value="6.214">10K</option>
+            <option value="13.1">Half Marathon</option>
+            <option value="26.2">Marathon</option>
+            <option value="31.069">50K</option>
+            <option value="62.137">100K</option>
+            <option value="100.0">100 Miles</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="formRaceFinishTime">Finish time (as HH:MM:SS):</label>
+        <input type="text" class="form-control" id="formRaceFinishTime" placeholder="Enter your finish time as HH:MM:SS" ng-model="formRaceFinishTime" required>
+    </div>
+
+    <div class="form-group">
+        <label for="formRaceBibNumber">Bib number:</label>
+        <input type="number" class="form-control" id="formRaceBibNumber" placeholder="Enter your bib number" ng-model="formRaceBibNumber">
+    </div>
+
+    <div class="form-group">
+        <label for="formRaceTotalinRace">Total in race:</label>
+        <input type="number" class="form-control" id="formRaceTotalinRace" placeholder="Enter total number of racers" ng-model="formRaceTotalinRace">
+    </div>
+
+    <div class="form-group">
+        <label for="formRaceOverallPlace">Overall place:</label>
+        <input type="number" class="form-control" id="formRaceOverallPlace" placeholder="Enter your overall place" ng-model="formRaceOverallPlace">
+    </div>
+
+    <div class="form-group">
+        <label for="formRaceTotalinGender">Total in gender:</label>
+        <input type="number" class="form-control" id="formRaceTotalinGender" placeholder="Enter number of racers in your gender" ng-model="formRaceTotalinGender">
+    </div>
+
+    <div class="form-group">
+        <label for="formRaceGenderPlace">Gender place:</label>
+        <input type="number" class="form-control" id="formRaceGenderPlace" placeholder="Enter your gender place" ng-model="formRaceGenderPlace">
+    </div>
+
+    <div class="form-group">
+        <label for="formRaceTotalinDivision">Total in age/gender division:</label>
+        <input type="number" class="form-control" id="formRaceTotalinDivision" placeholder="Enter number of racers in your age/gender division" ng-model="formRaceTotalinDivision">
+    </div>
+
+    <div class="form-group">
+        <label for="formRaceDivisionPlace">Division place:</label>
+        <input type="number" class="form-control" id="formRaceDivisionPlace" placeholder="Enter your age/gender division place" ng-model="formRaceDivisionPlace">
+    </div>
+
+    <button type="submit" class="btn btn-primary" ng-click="addRace()">Submit</button>
     <a href="#/racekeeper" class="btn">Cancel</a>
 </form>
-</p>
 </div>

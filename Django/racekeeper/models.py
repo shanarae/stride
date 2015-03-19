@@ -31,6 +31,8 @@ class Race(models.Model):
     divisionPlace = models.IntegerField(null=True, blank=True)
     user = models.ForeignKey(User)
     location = models.CharField(max_length=100, null=True, blank=True)
+    latitude = models.FloatField(null=True, blank=True)
+    longitude = models.FloatField(null=True, blank=True)
 
     @property
     def pace(self):

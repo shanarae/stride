@@ -10,38 +10,85 @@
     <h1>{{race.event}}</h1>
 </div>
 
-<p class="lead"><strong>Race Detail:</strong></p>
+<p class="lead"><strong>Race Overview</strong></p>
 <p>{{ race.event }} on {{ race.date | date:'MMM d, yyyy' }} in {{race.location}} | Distance: {{ race.distance | number:1 }}</p>
 <p>Finish time: {{ race.finishTime }} | Pace: {{ race.pace | pace }}</p>
 
 <hr>
 
 <div class="well">
-<p class="lead" id="editrace">
-    <form class="form-group" name="editraceForm">
-    <p class="lead"><strong>Update Race:</strong></p>
-    <p>Event name: <input ng-model="race.event" required></p>
-    <p>Date:  <input ng-model="race.date" type="date" required></p>
-    <p>Distance:  <select ng-model="race.distance" required>
-        <option style="display:none" value class>select a distance</option>
-        <option value="3.107">5K</option>
-        <option value="6.214">10K</option>
-        <option value="13.1">Half Marathon</option>
-        <option value="26.2">Marathon</option>
-        <option value="31.069">50K</option>
-        <option value="62.137">100K</option>
-        <option value="100.0">100 Miles</option></select></p>
-    <p>Bib number:  <input ng-model="race.bibNumber"></p>
-    <p>Finish time (enter as HH:MM:SS):  <input ng-model="race.finishTime" required></p>
-    <p>Total in race:  <input ng-model="race.totalinRace"></p>
-    <p>Overall place:  <input ng-model="race.overallPlace"></p>
-    <p>Total in gender:  <input ng-model="race.totalinGender"></p>
-    <p>Gender place:  <input ng-model="race.genderPlace"></p>
-    <p>Total in age/gender division:  <input ng-model="race.totalinDivision"></p>
-    <p>Division place:  <input ng-model="race.divisionPlace"></p>
-    <p>Location:  <input ng-model="race.location"></p>
-    <button class="btn btn-primary" ng-click="updateRace()"><strong>Update Race</strong></button>
+    <p class="lead"><strong>Edit Race</strong></p>
+    <form name="editraceForm" id="editrace">
+    <div class="form-group">
+        <label>Event name:</label>
+        <input type="text" class="form-control" ng-model="race.event" required>
+    </div>
+
+    <div class="form-group">
+        <label>Date:</label>
+        <input type="date" class="form-control" ng-model="race.date" required>
+    </div>
+
+    <div class="form-group">
+        <label>Location:</label>
+        <input type="text" class="form-control" ng-model="race.location" required>
+    </div>
+
+    <div class="form-group">
+        <label>Distance:</label>
+        <select class="form-control" ng-model="race.distance" required>
+            <option style="display:none" value class>select a distance</option>
+            <option value="3.107">5K</option>
+            <option value="6.214">10K</option>
+            <option value="13.1">Half Marathon</option>
+            <option value="26.2">Marathon</option>
+            <option value="31.069">50K</option>
+            <option value="62.137">100K</option>
+            <option value="100.0">100 Miles</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Finish time (as HH:MM:SS):</label>
+        <input type="text" class="form-control" ng-model="race.finishTime" required>
+    </div>
+
+    <div class="form-group">
+        <label>Bib number:</label>
+        <input type="number" class="form-control" ng-model="race.bibNumber">
+    </div>
+
+    <div class="form-group">
+        <label>Total in race:</label>
+        <input type="number" class="form-control" ng-model="race.totalinRace">
+    </div>
+
+    <div class="form-group">
+        <label>Overall place:</label>
+        <input type="number" class="form-control" ng-model="race.overallPlace">
+    </div>
+
+    <div class="form-group">
+        <label>Total in gender:</label>
+        <input type="number" class="form-control" ng-model="race.totalinGender">
+    </div>
+
+    <div class="form-group">
+        <label>Gender place:</label>
+        <input type="number" class="form-control" ng-model="race.genderPlace">
+    </div>
+
+    <div class="form-group">
+        <label>Total in age/gender division:</label>
+        <input type="number" class="form-control" ng-model="race.totalinDivision">
+    </div>
+
+    <div class="form-group">
+        <label>Division place:</label>
+        <input type="number" class="form-control" ng-model="race.divisionPlace">
+    </div>
+
+    <button type="submit" class="btn btn-primary" ng-click="updateRace()">Submit</button>
     <a href="#/racekeeper" class="btn">Cancel</a>
-</form>
-</p>
+    </form>
 </div>

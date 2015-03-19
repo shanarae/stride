@@ -45,13 +45,26 @@ angular.module('angularProject')
                 'divisionPlace':$scope.race.divisionPlace,
                 'location':$scope.race.location
             };
-            $http.put(url, data).
-            success(function(data){
-                console.log("Success" + data);
-                $location.path('/racekeeper');
-                }).
-            error(function(data) {
-                console.log("Error" + data);
+            var geoCoder = new google.maps.Geocoder();
+            geoCoder.geocode (
+                { address: data.location },
+                function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        var newAddress = results[0].geometry.location;
+                        data.latitude = parseFloat(newAddress.lat());
+                        data.longitude = parseFloat(newAddress.lng());
+                        $http.put(url, data).
+                        success(function(data){
+                            console.log("Success" + data);
+                            $location.path('/racekeeper');
+                            }).
+                        error(function(data) {
+                            console.log("Error" + data);
+                        });
+                    } else {
+                        $scope.error = ['Error updating race. Bad Location.'];
+                        console.log('error' + data.error);
+                    }
             });
         };
 

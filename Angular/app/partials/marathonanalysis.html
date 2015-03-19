@@ -14,7 +14,7 @@
     <label class="btn btn" ng-model="radioModel" btn-radio="5K"><a ng-href="#/racekeeper/raceanalysis/5K">5K</a></label>
     <label class="btn btn" ng-model="radioModel" btn-radio="10K"><a ng-href="#/racekeeper/raceanalysis/10K">10K</a></label>
     <label class="btn btn" ng-model="radioModel" btn-radio="half"><a ng-href="#/racekeeper/raceanalysis/half">Half Marathon</a></label>
-    <label class="btn btn" ng-model="radioModel" btn-radio="marathon"><a ng-href="#/racekeeper/raceanalysis/marathon">Marathon</a></label>
+    <label class="btn btn active" ng-model="radioModel" btn-radio="marathon"><a ng-href="#/racekeeper/raceanalysis/marathon">Marathon</a></label>
     <label class="btn btn" ng-model="radioModel" btn-radio="50K"><a ng-href="#/racekeeper/raceanalysis/50K">50K</a></label>
     <label class="btn btn" ng-model="radioModel" btn-radio="100K"><a ng-href="#/racekeeper/raceanalysis/100K">100K</a></label>
     <label class="btn btn" ng-model="radioModel" btn-radio="100M"><a ng-href="#/racekeeper/raceanalysis/100M">100 Mile</a></label>
@@ -31,7 +31,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading"><strong>My Marathon Races</strong></div>
-        <table class="table">
+        <table class="table table-hover">
         <thead>
         <tr>
             <th ng-click="sortBy='event';reverse=!reverse">Event</th>

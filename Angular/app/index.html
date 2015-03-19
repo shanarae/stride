@@ -21,7 +21,7 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
+      <div class="navbar navbar-inverse" role="navigation">
         <div class="container">
           <div class="navbar-header">
 
@@ -32,7 +32,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">stride</a>
+            <a class="navbar-brand" href="#/">STRIDE</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="homeCtrl">
@@ -44,9 +44,8 @@
               <li ng-class="{active: isActive('#/raceplan')}"><a ng-href="#/raceplan">Training Planner</a></li>
               <li ng-class="{active: isActive('#/profile')}"><a ng-href="#/profile">Profile</a></li>
               <li ng-class="{active: isActive('#/register')}"><a ng-href="#/register">Register</a></li>
-              <li ng-if="loggedIn == true"><strong> {{logname}}
-                <span ng-repeat="detail in details">{{detail.username}}</span></strong></li>
             </ul>
+              <p class="navbar-text navbar-right" ng-if="loggedIn == true">Signed in as {{logname}} <span ng-repeat="detail in details">{{detail.username}}</span></p>
           </div>
         </div>
       </div>
