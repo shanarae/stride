@@ -141,7 +141,7 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
                     var raceLocation = data[i];
                     if (raceLocation.latitude && raceLocation.longitude) {
                         var latlng = new google.maps.LatLng(raceLocation.latitude, raceLocation.longitude);
-                        setMarker(map, latlng, raceLocation.location, raceLocation.event, raceLocation.distance);
+                        setMarker(map, latlng, raceLocation.location, raceLocation.event + "<br>" + raceLocation.date + "<br>" + raceLocation.distance);
                     }
                 }
 
