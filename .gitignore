@@ -2,3 +2,5 @@
 *.pyc
 django/db.sqlite3
 local_settings.py
+
+Angular/stride.zip

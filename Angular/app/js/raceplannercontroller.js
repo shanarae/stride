@@ -44,7 +44,7 @@ angular.module('angularProject')
                         var newAddress = results[0].geometry.location;
                         data.latitude = parseFloat(newAddress.lat());
                         data.longitude = parseFloat(newAddress.lng());
-                        $http.post('http://localhost:8001/races/create/', data).
+                        $http.post(constants.serverAddress + 'races/create/', data).
                         success(function(data){
                             $scope.races.push(
                                 {
@@ -75,7 +75,7 @@ angular.module('angularProject')
         };
 
         $scope.removePlan = function(race){
-            $http.delete('http://localhost:8001/races/race/'+ race.id + '/').
+            $http.delete(constants.serverAddress + 'races/race/' + race.id + '/').
             success(function(data){
                    $scope.races.splice(
                     $scope.races.indexOf(race),
@@ -89,7 +89,7 @@ angular.module('angularProject')
 
         };
 
-        var racesRequest = $http.get('http://localhost:8001/races/athlete/upcoming/');
+        var racesRequest = $http.get(constants.serverAddress + 'races/athlete/upcoming/');
         racesRequest.success(function(data){
             console.log('success' + data);
             $scope.races=data;

@@ -22,7 +22,7 @@ angular.module('angularProject')
             {distance: 100.0, name: '100 Miles'}
         ];
 
-        $http.get('http://localhost:8001/races/generics/id/' + $routeParams.raceId + '/').success(function(data) {
+        $http.get(constants.serverAddress + 'races/generics/id/' + $routeParams.raceId + '/').success(function(data) {
             $scope.race = data;
             if($scope.race.distance==100) $scope.race.distance = $scope.race.distance.toFixed(1);//hack for dropped decimal
             $scope.race.finishTime = $filter("date")($scope.race.finishTime*1000, 'H:mm:ss','UTC');
@@ -30,7 +30,7 @@ angular.module('angularProject')
         });
 
         $scope.updateRace = function() {
-            var url = 'http://localhost:8001/races/generics/id/' + $routeParams.raceId + '/';
+            var url = constants.serverAddress + 'races/generics/id/' + $routeParams.raceId + '/';
             var data = {
                 'event':$scope.race.event,
                 'date':$scope.race.date.getFullYear() + '-' + ($scope.race.date.getMonth() + 1) + '-' + $scope.race.date.getDate(),

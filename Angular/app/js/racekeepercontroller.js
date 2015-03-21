@@ -87,7 +87,7 @@ angular.module('angularProject')
             {distance: 100.0, name: '100 Miles'}
         ];
 
-        var racesRequest = $http.get('http://localhost:8001/races/athlete/');
+        var racesRequest = $http.get(constants.serverAddress + 'races/athlete/');
         racesRequest.success(function(data){
             console.log('success' + data);
             $scope.races=data;
@@ -124,7 +124,7 @@ angular.module('angularProject')
                         var newAddress = results[0].geometry.location;
                         data.latitude = parseFloat(newAddress.lat());
                         data.longitude = parseFloat(newAddress.lng());
-                        $http.post('http://localhost:8001/races/create/', data).
+                        $http.post(constants.serverAddress + 'races/create/', data).
                         success(function(data){
                             $scope.races.push(
                                 {
@@ -169,7 +169,7 @@ angular.module('angularProject')
         };
 
         $scope.removeRace = function(race){
-            $http.delete('http://localhost:8001/races/race/'+ race.id + '/').
+            $http.delete(constants.serverAddress + 'races/race/' + race.id + '/').
             success(function(data){
                    $scope.races.splice(
                     $scope.races.indexOf(race),
@@ -183,7 +183,7 @@ angular.module('angularProject')
 
         };
 
-        var fivesRequest = $http.get('http://localhost:8001/races/athlete/5K/');
+        var fivesRequest = $http.get(constants.serverAddress + 'races/athlete/5K/');
         fivesRequest.success(function(data){
             console.log('success' + data);
             $scope.fives=data;
@@ -198,7 +198,7 @@ angular.module('angularProject')
         };
 
 
-        var tensRequest = $http.get('http://localhost:8001/races/athlete/10K/');
+        var tensRequest = $http.get(constants.serverAddress + 'races/athlete/10K/');
         tensRequest.success(function(data){
             console.log('success' + data);
             $scope.tens=data;
@@ -213,7 +213,7 @@ angular.module('angularProject')
         };
 
 
-        var halfsRequest = $http.get('http://localhost:8001/races/athlete/Half/');
+        var halfsRequest = $http.get(constants.serverAddress + 'races/athlete/Half/');
         halfsRequest.success(function(data){
             console.log('success' + data);
             $scope.halfs=data;
@@ -228,7 +228,7 @@ angular.module('angularProject')
         };
 
 
-        var marathonsRequest = $http.get('http://localhost:8001/races/athlete/Marathon/');
+        var marathonsRequest = $http.get(constants.serverAddress + 'races/athlete/Marathon/');
         marathonsRequest.success(function(data){
             console.log('success' + data);
             $scope.marathons=data;
@@ -243,7 +243,7 @@ angular.module('angularProject')
         };
 
 
-        var fiftiesRequest = $http.get('http://localhost:8001/races/athlete/50K/');
+        var fiftiesRequest = $http.get(constants.serverAddress + 'races/athlete/50K/');
         fiftiesRequest.success(function(data){
             console.log('success' + data);
             $scope.fifties=data;
@@ -258,7 +258,7 @@ angular.module('angularProject')
         };
 
 
-        var hunkaysRequest = $http.get('http://localhost:8001/races/athlete/100K/');
+        var hunkaysRequest = $http.get(constants.serverAddress + 'races/athlete/100K/');
         hunkaysRequest.success(function(data){
             console.log('success' + data);
             $scope.hunkays=data;
@@ -273,7 +273,7 @@ angular.module('angularProject')
         };
 
 
-        var hunmilesRequest = $http.get('http://localhost:8001/races/athlete/100M/');
+        var hunmilesRequest = $http.get(constants.serverAddress + 'races/athlete/100M/');
         hunmilesRequest.success(function(data){
             console.log('success' + data);
             $scope.hunmiles=data;
@@ -379,7 +379,7 @@ angular.module('angularProject')
         $scope.racechart = null;
 
         $scope.showraceGraph = function() {
-            var racegraphRequest = $http.get('http://localhost:8001/races/athlete/');
+            var racegraphRequest = $http.get(constants.serverAddress + 'races/athlete/');
             racegraphRequest.success(function(data){
                 console.log('success' + data);
                  $scope.racechart = c3.generate({
@@ -431,7 +431,7 @@ angular.module('angularProject')
         $scope.race5Kchart = null;
 
         $scope.showrace5KGraph = function() {
-            var racegraph5KRequest = $http.get('http://localhost:8001/races/athlete/5K/');
+            var racegraph5KRequest = $http.get(constants.serverAddress + 'races/athlete/5K/');
             racegraph5KRequest.success(function(data){
                 console.log('success' + data);
                  $scope.race5Kchart = c3.generate({
@@ -483,7 +483,7 @@ angular.module('angularProject')
         $scope.race10Kchart = null;
 
         $scope.showrace10KGraph = function() {
-            var racegraph10KRequest = $http.get('http://localhost:8001/races/athlete/10K/');
+            var racegraph10KRequest = $http.get(constants.serverAddress + 'races/athlete/10K/');
             racegraph10KRequest.success(function(data){
                 console.log('success' + data);
                  $scope.race10Kchart = c3.generate({
@@ -535,7 +535,7 @@ angular.module('angularProject')
         $scope.raceHalfchart = null;
 
         $scope.showraceHalfGraph = function() {
-            var racegraphHalfRequest = $http.get('http://localhost:8001/races/athlete/Half/');
+            var racegraphHalfRequest = $http.get(constants.serverAddress + 'races/athlete/Half/');
             racegraphHalfRequest.success(function(data){
                 console.log('success' + data);
                  $scope.raceHalfchart = c3.generate({
@@ -587,7 +587,7 @@ angular.module('angularProject')
         $scope.raceMarathonchart = null;
 
         $scope.showraceMarathonGraph = function() {
-            var racegraphMarathonRequest = $http.get('http://localhost:8001/races/athlete/Marathon/');
+            var racegraphMarathonRequest = $http.get(constants.serverAddress + 'races/athlete/Marathon/');
             racegraphMarathonRequest.success(function(data){
                 console.log('success' + data);
                  $scope.raceMarathonchart = c3.generate({
@@ -639,7 +639,7 @@ angular.module('angularProject')
         $scope.race50Kchart = null;
 
         $scope.showrace50KGraph = function() {
-            var racegraph50KRequest = $http.get('http://localhost:8001/races/athlete/50K/');
+            var racegraph50KRequest = $http.get(constants.serverAddress + 'races/athlete/50K/');
             racegraph50KRequest.success(function(data){
                 console.log('success' + data);
                  $scope.race50Kchart = c3.generate({
@@ -691,7 +691,7 @@ angular.module('angularProject')
         $scope.race100Kchart = null;
 
         $scope.showrace100KGraph = function() {
-            var racegraph100KRequest = $http.get('http://localhost:8001/races/athlete/100K/');
+            var racegraph100KRequest = $http.get(constants.serverAddress + 'races/athlete/100K/');
             racegraph100KRequest.success(function(data){
                 console.log('success' + data);
                  $scope.race100Kchart = c3.generate({
@@ -743,7 +743,7 @@ angular.module('angularProject')
         $scope.race100Mchart = null;
 
         $scope.showrace100MGraph = function() {
-            var racegraph100MRequest = $http.get('http://localhost:8001/races/athlete/100M/');
+            var racegraph100MRequest = $http.get(constants.serverAddress + 'races/athlete/100M/');
             racegraph100MRequest.success(function(data){
                 console.log('success' + data);
                  $scope.race100Mchart = c3.generate({

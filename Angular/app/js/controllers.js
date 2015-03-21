@@ -12,7 +12,7 @@ var controllersModule = angular.module('angularProject.controllers', [])
           $location.path('/home');
       };
 
-        var detailsRequest = $http.get('http://localhost:8001/users/myprofile/');
+        var detailsRequest = $http.get(constants.serverAddress + 'users/myprofile/');
         detailsRequest.success(function (data) {
             console.log('success' + data);
             $scope.details = data;
@@ -37,7 +37,7 @@ var controllersModule = angular.module('angularProject.controllers', [])
         'email': $scope.formEmail,
         'password': $scope.formPassword1
     };
-        $http.post('http://localhost:8001/register', data).
+        $http.post(constants.serverAddress + 'register', data).
         success(function(data){
                 var user_data = {
 		                "username": $scope.formUsername,
@@ -51,7 +51,7 @@ var controllersModule = angular.module('angularProject.controllers', [])
                 $scope.formPassword2 = '';
 
                 //$http.post(constants.serverAddress + "api-token-auth", user_data)
-                $http.post("http://localhost:8001/api-token-auth/", user_data)
+                $http.post(constants.serverAddress + 'api-token-auth/', user_data)
                     .success(function(response) {
                         $cookieStore.put('djangotoken', response.token);
                         $http.defaults.headers.common['Authorization'] = 'Token ' + response.token;

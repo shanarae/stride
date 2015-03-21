@@ -17,12 +17,12 @@ angular.module('angularProject')
             $location.path('/home');
         };
 
-        $http.get('http://localhost:8001/users/' + $routeParams.userId).success(function(data) {
+        $http.get(constants.serverAddress + 'users/' + $routeParams.userId).success(function(data) {
             $scope.user = data;
         });
 
         $scope.updateProfile = function() {
-            var url = 'http://localhost:8001/users/' + $routeParams.userId;
+            var url = constants.serverAddress + 'users/' + $routeParams.userId;
             var data = {
                 'username':$scope.user.username,
                 'first_name':$scope.user.first_name,

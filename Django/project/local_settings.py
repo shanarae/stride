@@ -12,9 +12,20 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django_auth',
-    }
+        'USER': 'shanaraegoodwin',
+        'PASSWORD': 'Ilovetorun00',
+        'HOST': 'stridedb.cftttcotbf66.us-west-2.rds.amazonaws.com',
+        'PORT': '5432',
+            }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'django_auth',
+#     }
+# }
+# RDS Instance: stridedb.cftttcotbf66.us-west-2.rds.amazonaws.com:5432
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -56,6 +67,7 @@ DEBUG_APPS = ()
 CORS_ORIGIN_WHITELIST = (
     'localhost:8000',
     'localhost/',
+    'stride.elasticbeanstalk.com',
 )
 
 EMAIL_HOST = 'smtp.gmail.com'

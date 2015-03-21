@@ -59,7 +59,7 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
 		            };
 					
 					//$http.post(constants.serverAddress + "api-token-auth", user_data)
-		            $http.post("http://localhost:8001/api-token-auth/", user_data)
+		            $http.post(constants.serverAddress + 'api-token-auth/', user_data)
 		                .success(function(response) {
 		                	$cookieStore.put('djangotoken', response.token);
 		                    $http.defaults.headers.common['Authorization'] = 'Token ' + response.token;
@@ -133,7 +133,7 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
             $http.defaults.xsrfCookieName = 'csrftoken';
             $http.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-            var raceLocations = $http.get('http://localhost:8001/races/athlete/locations/');
+            var raceLocations = $http.get(constants.serverAddress + 'races/athlete/locations/');
 
             raceLocations.success(function(data) {
                 console.log('success' + JSON.stringify(data));

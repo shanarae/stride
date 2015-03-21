@@ -381,7 +381,7 @@ angular.module('angularProject')
     $http.defaults.xsrfCookieName = 'csrftoken';
     $http.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-        $http.get('http://localhost:8001/races/generics/id/' + $routeParams.raceId + '/').success(function(data) {
+        $http.get(constants.serverAddress + 'races/generics/id/' + $routeParams.raceId + '/').success(function(data) {
             $scope.race = data;
             $scope.plan = new Plan(data);
             console.log(JSON.stringify($scope.plan));

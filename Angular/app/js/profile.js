@@ -17,7 +17,7 @@ angular.module('angularProject')
             $location.path('/home');
         };
 
-        var detailsRequest = $http.get('http://localhost:8001/users/myprofile/');
+        var detailsRequest = $http.get(constants.serverAddress + 'users/myprofile/');
         detailsRequest.success(function (data) {
             console.log('success' + data);
             $scope.details = data;
