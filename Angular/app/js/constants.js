@@ -1,6 +1,6 @@
 var constants = {
     //'serverAddress': '.../',
-    "serverAddress": "http://localhost:8001/",
+    "serverAddress": "http://backendstride.elasticbeanstalk.com/",
     "resources": {
         "Address": {
             "endpoint": "addresses"

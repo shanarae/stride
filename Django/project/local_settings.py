@@ -14,7 +14,8 @@ DATABASES = {
         'NAME': 'django_auth',
         'USER': 'shanaraegoodwin',
         'PASSWORD': 'Ilovetorun00',
-        'HOST': 'stridedb.cftttcotbf66.us-west-2.rds.amazonaws.com',
+        # 'HOST': 'stridedb.cftttcotbf66.us-west-2.rds.amazonaws.com',
+        'HOST': 'stridedbv3.cftttcotbf66.us-west-2.rds.amazonaws.com',
         'PORT': '5432',
             }
 }
@@ -66,7 +67,7 @@ DEBUG_APPS = ()
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8000',
-    'localhost/',
+    'localhost:8081',
     'stride.elasticbeanstalk.com',
 )
 
