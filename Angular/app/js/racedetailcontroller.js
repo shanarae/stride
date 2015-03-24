@@ -56,7 +56,7 @@ angular.module('angularProject')
                         $http.put(url, data).
                         success(function(data){
                             console.log("Success" + data);
-                            $location.path('/racekeeper');
+                            $location.path('/racekeeper/raceanalysis');
                             }).
                         error(function(data) {
                             console.log("Error" + data);

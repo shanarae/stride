@@ -1,7 +1,7 @@
 <button class="btn pull-right btn" ng-click="logout()">Logout</button>
 
 <ul class="nav nav-tabs">
-  <li role="presentation"><a href="#/raceplan">Existing Plans</a></li>
+  <li role="presentation"><a href="#/raceplan">My Training Plans</a></li>
   <li role="presentation" class="active"><a href="#/raceplan/myplans">Create New Plan</a></li>
 </ul>
 
@@ -32,7 +32,7 @@
     <div class="form-group">
         <label for="formPlanDistance">Distance:</label>
         <select class="form-control" id="formPlanDistance" ng-model="formPlanDistance" required>
-        <option style="display:none" value class>select a distance</option>
+        <option style="display:none" value class>Select a distance</option>
         <option value="3.107">5K</option>
         <option value="6.214">10K</option>
         <option value="13.1">Half Marathon</option>

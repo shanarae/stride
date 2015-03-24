@@ -155,7 +155,7 @@ angular.module('angularProject')
                             $scope.formRaceTotalinDivision = '';
                             $scope.formRaceDivisionPlace = '';
                             $scope.formRaceLocation = '';
-                            $location.path('/racekeeper');
+                            $location.path('/racekeeper/raceanalysis');
                         }).
                         error(function(data){
                             $scope.error = ['Error adding new race'];

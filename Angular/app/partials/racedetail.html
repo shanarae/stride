@@ -1,9 +1,10 @@
 <button class="btn pull-right btn" ng-click="logout()">Logout</button>
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#/racekeeper">Past Races</a></li>
-  <li role="presentation"><a href="#/racekeeper/raceanalysis">Race Analysis</a></li>
-  <li role="presentation"><a href="#/racekeeper/addrace">Add a Race</a></li>
+  <!--<li role="presentation" class="active"><a href="#/racekeeper">Past Races</a></li>-->
+  <li role="presentation"><a href="#/racekeeper/raceanalysis">My Race Results</a></li>
+  <li role="presentation"><a href="#/racefinder">My Race Map</a></li>
+  <li role="presentation"><a href="#/racekeeper/addrace">Add Race</a></li>
 </ul>
 
 <div class="page-header">
@@ -89,6 +90,6 @@
     </div>
 
     <button type="submit" class="btn btn-primary" ng-click="updateRace()">Submit</button>
-    <a href="#/racekeeper" class="btn">Cancel</a>
+    <a href="#/racekeeper/raceanalysis" class="btn">Cancel</a>
     </form>
 </div>

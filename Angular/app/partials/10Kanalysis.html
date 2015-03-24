@@ -1,12 +1,13 @@
 <button class="btn pull-right btn" ng-click="logout()">Logout</button>
 <ul class="nav nav-tabs">
-  <li role="presentation"><a href="#/racekeeper">Past Races</a></li>
-  <li role="presentation" class="active"><a href="#/racekeeper/raceanalysis">Race Analysis</a></li>
-  <li role="presentation"><a href="#/racekeeper/addrace">Add a Race</a></li>
+  <!--<li role="presentation"><a href="#/racekeeper">Past Races</a></li>-->
+  <li role="presentation" class="active"><a href="#/racekeeper/raceanalysis">My Race Results</a></li>
+  <li role="presentation"><a href="#/racefinder">My Race Map</a></li>
+  <li role="presentation"><a href="#/racekeeper/addrace">Add Race</a></li>
 </ul>
 
 <div class="page-header">
-    <h1>Performance Analysis</h1>
+    <h1>Race Results</h1>
 </div>
 
 <div class="btn pull-right btn-group">
@@ -20,7 +21,7 @@
     <label class="btn btn" ng-model="radioModel" btn-radio="100M"><a ng-href="#/racekeeper/raceanalysis/100M">100 Mile</a></label>
 </div>
 
-<p class="lead">10K Races: <strong>{{ getTotalTens() }}</strong></p>
+<p class="lead">10K (6.2 Mile) Races: <strong>{{ getTotalTens() }}</strong></p>
 <div>
 <div id="race10Kchart"></div>
 <div ng-init="showrace10KGraph()">
@@ -28,7 +29,7 @@
 </div>
 <hr>
     <div class="panel panel-default">
-        <div class="panel-heading"><strong>My 10K Races</strong></div>
+        <div class="panel-heading"><strong>10K Races</strong></div>
         <table class="table table-hover">
         <thead>
         <tr>

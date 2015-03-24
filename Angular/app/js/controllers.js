@@ -57,7 +57,7 @@ var controllersModule = angular.module('angularProject.controllers', [])
                         $http.defaults.headers.common['Authorization'] = 'Token ' + response.token;
                         authService.loginConfirmed();
                         alert("Thank you for registering!");
-                        $location.path('/racekeeper');
+                        $location.path('/home');
                 });
             }).
 

@@ -1,13 +1,17 @@
+<button class="btn pull-right btn" ng-if="loggedIn != true"><a ng-href="#/login">Login</a></button>
+<span ng-if="loggedIn != true">Please login or register to access this page.</span>
+<div ng-if="loggedIn == true">
 <button class="btn pull-right btn" ng-click="logout()">Logout</button>
 
 <ul class="nav nav-tabs">
-  <li role="presentation"><a href="#/racekeeper">Past Races</a></li>
-  <li role="presentation" class="active"><a href="#/racekeeper/raceanalysis">Race Analysis</a></li>
-  <li role="presentation"><a href="#/racekeeper/addrace">Add a Race</a></li>
+  <!--<li role="presentation"><a href="#/racekeeper">Past Races</a></li>-->
+  <li role="presentation" class="active"><a href="#/racekeeper/raceanalysis">My Race Results</a></li>
+  <li role="presentation"><a href="#/racefinder">My Race Map</a></li>
+  <li role="presentation"><a href="#/racekeeper/addrace">Add Race</a></li>
 </ul>
 
 <div class="page-header">
-    <h1>Performance Analysis</h1>
+    <h1>Race Results</h1>
 </div>
 
 <div class="btn pull-right btn-group">
@@ -21,9 +25,61 @@
     <label class="btn btn" ng-model="radioModel" btn-radio="100M"><a ng-href="#/racekeeper/raceanalysis/100M">100 Mile</a></label>
 </div>
 
-<p class="lead">All Races: <strong>{{ getTotalRaces() }}</strong></p>
+<p class="lead">Total Races: <strong>{{ getTotalRaces() }}</strong></p>
 <div>
 <div id="racechart"></div>
 <div ng-init="showraceGraph()">
 </div>
+</div>
+<hr>
+
+    <p>Filter by Distance: <input type="text" ng-model="raceFilter.distance"></p>
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>All Races</strong></div>
+        <table class="table table-hover">
+        <thead>
+        <tr>
+            <th ng-click="sortBy='event';reverse=!reverse">Event</th>
+            <th ng-click="sortBy='date';reverse=!reverse">Date</th>
+            <th ng-click="sortBy='distance';reverse=!reverse">Distance (miles)</th>
+            <th ng-click="sortBy='finishTime';reverse=!reverse">Finish Time</th>
+            <th ng-click="sortBy='pace';reverse=!reverse">Pace</th>
+            <th ng-click="sortBy='totalinRace';reverse=!reverse">Total in Race</th>
+            <th ng-click="sortBy='overallPlace';reverse=!reverse">Overall Place</th>
+            <th ng-click="sortBy='overallPercentile';reverse=!reverse">Overall %</th>
+            <th ng-click="sortBy='totalinGender';reverse=!reverse">Total in Gender</th>
+            <th ng-click="sortBy='genderPace';reverse=!reverse">Gender Place</th>
+            <th ng-click="sortBy='genderPercentile';reverse=!reverse">Gender %</th>
+            <th ng-click="sortBy='totalinDivision';reverse=!reverse">Total in Division</th>
+            <th ng-click="sortBy='divisionPlace';reverse=!reverse">Division Place</th>
+            <th ng-click="sortBy='divisionPercentile';reverse=!reverse">Division %</th>
+            <th>Bib #</th>
+
+        </tr>
+        </thead>
+
+        <tbody ng-repeat="race in races | filter: raceFilter | orderBy: sortBy:reverse" class="race">
+            <tr>
+                <td>{{ race.event }}</td>
+                <td>{{ race.date | date:'MMM d, yyyy' }}</td>
+                <td>{{ race.distance | number:1 }}</td>
+                <td>{{ race.finishTime * 1000 | date:'H:mm:ss':'UTC' }}</td>
+                <td>{{ race.pace | pace }}</td>
+                <td>{{ race.totalinRace | number }}</td>
+                <td>{{ race.overallPlace | number }}</td>
+                <td>{{ race.overallPercentile * 100 | number:1 }}</td>
+                <td>{{ race.totalinGender | number }}</td>
+                <td>{{ race.genderPlace | number }}</td>
+                <td>{{ race.genderPercentile * 100 | number:1 }}</td>
+                <td>{{ race.totalinDivision | number }}</td>
+                <td>{{ race.divisionPlace | number }}</td>
+                <td>{{ race.divisionPercentile * 100 | number:1 }}</td>
+                <td>{{ race.bibNumber }}</td>
+                <td bn-index-watch><a ng-href="#/racekeeper/{{race.id}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td bn-index-watch><a ng-click="removeRace(race)"><span class='glyphicon glyphicon-trash'></span></a></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
 </div>

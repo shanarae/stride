@@ -1,9 +1,10 @@
 <button class="btn pull-right btn" ng-click="logout()">Logout</button>
 
 <ul class="nav nav-tabs">
-  <li role="presentation"><a href="#/racekeeper">Past Races</a></li>
-  <li role="presentation"><a href="#/racekeeper/raceanalysis">Race Analysis</a></li>
-  <li role="presentation" class="active"><a href="#/racekeeper/addrace">Add a Race</a></li>
+  <!--<li role="presentation"><a href="#/racekeeper">Past Races</a></li>-->
+  <li role="presentation"><a href="#/racekeeper/raceanalysis">My Race Results</a></li>
+  <li role="presentation"><a href="#/racefinder">My Race Map</a></li>
+  <li role="presentation" class="active"><a href="#/racekeeper/addrace">Add Race</a></li>
 </ul>
 
 <div class="page-header">
@@ -30,7 +31,7 @@
     <div class="form-group">
         <label for="formRaceDistance">Distance:</label>
         <select class="form-control" id="formRaceDistance" ng-model="formRaceDistance" required>
-            <option style="display:none" value class>select a distance</option>
+            <option style="display:none" value class>Select a distance</option>
             <option value="3.107">5K</option>
             <option value="6.214">10K</option>
             <option value="13.1">Half Marathon</option>
@@ -82,6 +83,6 @@
     </div>
 
     <button type="submit" class="btn btn-primary" ng-click="addRace()">Submit</button>
-    <a href="#/racekeeper" class="btn">Cancel</a>
+    <a href="#/racekeeper/raceanalysis" class="btn">Cancel</a>
 </form>
 </div>

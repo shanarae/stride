@@ -64,7 +64,7 @@ angular.module('angularProject.directives', ['http-auth-interceptor'])
 		                	$cookieStore.put('djangotoken', response.token);
 		                    $http.defaults.headers.common['Authorization'] = 'Token ' + response.token;
 		                    authService.loginConfirmed();
-                            $location.path('/racekeeper');
+                            $location.path('/home');
                             $rootScope.logname = scope.username;
 		            }); 
 
