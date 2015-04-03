@@ -1,9 +1,6 @@
-<button class="btn pull-right btn" ng-if="loggedIn != true"><a ng-href="#/login">Login</a></button>
 <div ng-if="loggedIn == true">
-<button class="btn pull-right btn" ng-click="logout()">Logout</button>
 
 <ul class="nav nav-tabs">
-  <!--<li role="presentation"><a href="#/racekeeper">Past Races</a></li>-->
   <li role="presentation"><a href="#/racekeeper/raceanalysis">My Race Results</a></li>
   <li role="presentation" class="active"><a href="#/racefinder">My Race Map</a></li>
   <li role="presentation"><a href="#/racekeeper/addrace">Add Race</a></li>

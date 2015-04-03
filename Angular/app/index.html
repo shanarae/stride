@@ -38,13 +38,14 @@
           <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="homeCtrl">
 
             <ul class="nav navbar-nav">
-              <!--<li ng-class="{active: isActive('#/')}"><a href="#/">Home</a></li>-->
               <li ng-class="{active: isActive('#/raceplan')}"><a ng-href="#/raceplan">Training Planner</a></li>
               <li ng-class="{active: isActive('#/racekeeper')}"><a ng-href="#/racekeeper/raceanalysis">Race Tracker</a></li>
-              <!--<li ng-class="{active: isActive('#/racefinder')}"><a ng-href="#/racefinder">Event Mapper</a></li>-->
               <li ng-class="{active: isActive('#/profile')}" ng-if="loggedIn == true"><a ng-href="#/profile">Profile</a></li>
-              <li ng-class="{active: isActive('#/register')}" ng-if="loggedIn != true"><a ng-href="#/register">Register</a></li>
+              <p class="navbar-text navbar-right" ng-if="loggedIn == true" ng-click="logout()">Logout</p>
             </ul>
+              <p class="navbar-text navbar-right" ng-if="loggedIn != true"><a ng-href="#/login">Login</a></p>
+              <p class="navbar-text navbar-right" ng-if="loggedIn != true"><a ng-href="#/register">Register</a></p>
+              <!--<p class="navbar-text navbar-right" ng-if="loggedIn == true" ng-click="logout()">Logout</p>-->
               <p class="navbar-text navbar-right" ng-if="loggedIn == true">{{logname}} <span ng-repeat="detail in details">{{detail.username}}</span></p>
           </div>
         </div>
