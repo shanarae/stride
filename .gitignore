@@ -4,3 +4,4 @@ django/db.sqlite3
 local_settings.py
 
 Angular/stride.zip
+Django/project/local_settings.py
