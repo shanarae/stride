@@ -4,5 +4,7 @@
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 local_settings.py
+local_settings.pyc
 stridebackend.zip
 project/local_settings.py
+project/local_settings.pyc
