@@ -19,6 +19,8 @@ LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
 
+TIME_ZONE = 'America/Chicago'
+
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -112,11 +114,6 @@ LOGGING = {
     }
 }
 
-try:
-    from local_settings import *
-    INSTALLED_APPS += DEBUG_APPS
-except ImportError:
-    pass
 
 #override with your own settings
 EMAIL_USE_TLS = True
@@ -125,3 +122,65 @@ EMAIL_HOST_USER = 'email_host_user'
 EMAIL_HOST_PASSWORD = 'email_host_password'
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = 'default_from_email'
+
+# Example: "/var/www/example.com/media/"
+MEDIA_ROOT = ''
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://example.com/media/", "http://media.example.com/"
+MEDIA_URL = ''
+
+# Absolute path to the directory static files should be collected to.
+# Don't put anything in this directory yourself; store your static files
+# in apps' "static/" subdirectories and in STATICFILES_DIRS.
+# Example: "/var/www/example.com/static/"
+# STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
+STATIC_ROOT = ''
+
+# URL prefix for static files.
+# Example: "http://example.com/static/", "http://static.example.com/"
+STATIC_URL = '/static/'
+
+# Additional locations of static files
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+)
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8000',
+    'localhost:8081',
+    'stride.elasticbeanstalk.com',
+)
+
+try:
+    SECRET_KEY = os.environ['SECRET_KEY']
+except KeyError:
+    pass
+
+
+try:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'django_auth',
+             'USER': os.environ['DATABASE_USER'],
+             'PASSWORD': os.environ['DATABASE_PASSWORD'],
+             'HOST': os.environ['DATABASE_HOST'],
+            'PORT': '5432',
+                }
+    }
+except KeyError:
+    pass
+
+try:
+    from local_settings import *
+    INSTALLED_APPS += DEBUG_APPS
+except ImportError:
+    pass
+
+
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
